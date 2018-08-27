@@ -1,7 +1,7 @@
 ---
 title: "Layout: Header Image (External URL)"
 header:
-  image: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
+  overlay_image: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
 categories:
   - Layout
   - Uncategorized
