@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "contrast" # "default, ""air", "aqua", "contrast", "d
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Sam <3's Coffee"
+title                    : "Sam ❤️'s ☕"
 title_separator          : "-" # option of customizing the separation character used in SEO-friendly page titles. Example: title_separator: "|" would produce page titles like Sample Page | My Awesome Site.
 name                     : "Samuel DC"
 description              : "The ramblings of a madman surfing the information superhighway."
@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Samuel DC"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
   location         : "Seattle, WA"
   email            :
@@ -113,7 +113,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : samuelcochrane
   gitlab           :
   google_plus      :
   keybase          :
