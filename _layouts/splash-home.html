@@ -18,13 +18,12 @@ layout: default
     <section class="page__content" itemprop="text">
       {{ content }}
     </section>
-
-    <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
-    {% for post in paginator.posts %}
-      {% include archive-single.html type="grid" %}
-    {% endfor %}
-
-    {% include paginator.html %}
   </article>
+  <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+  {% for post in paginator.posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+
+  {% include paginator.html %}
 </div>
