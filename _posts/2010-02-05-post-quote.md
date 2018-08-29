@@ -5,7 +5,7 @@ toc: false
 share: false
 author: false
 header:
-  #overlay_image: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
+  image: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
   teaser: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
 categories:
 #  - Guides
