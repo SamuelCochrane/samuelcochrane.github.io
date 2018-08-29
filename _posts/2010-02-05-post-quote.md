@@ -31,12 +31,13 @@ This page serves as a log of quotes I've found that left some lasting impression
 <br>Added 08/27/18</small>
 
 
-<ul>
+
 {% for item in site.data.quotes %}
-  <li>
-    > {{item.quote}}
-    > <br><small><cite>{{item.from}}</cite>
-    <br>{{item.dateAdded}}</small>
-  </li>
+> {{item.quote}}
+<br>
+<small><cite>
+> {{item.from}}
+<br>
+{{item.dateAdded}}
+</cite></small>
 {% endfor %}
-</ul>
