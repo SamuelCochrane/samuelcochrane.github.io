@@ -32,16 +32,3 @@ This page serves as a log of quotes I've found that left some lasting impression
 - Timothy Ferriss, The 4-Hour Workweek
 <br><small>Added 08/27/18</small>
 </cite>
-
-
-<!--<ul>
-{% for quote in site.data.quotes %}
-  <li>
-    > {{quote.quote}}
-    <br> <cite>
-    - {{quote.name}}
-    <br><small>{{quote.dateAdded}}</small>
-    </cite>
-  </li>
-{% endfor %}
-</ul>--> 
