@@ -10,12 +10,10 @@ header:
 categories:
 #  - Guides
 #  -
-#  - Uncategorized
+  - Uncategorized
 tags:
-  - edge case
-  - featured image
-  - image
-  - layout
+#  - edge case
+
 
 ---
 This page serves as a log of quotes I've found that left some lasting impression.
