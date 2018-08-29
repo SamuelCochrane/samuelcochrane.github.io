@@ -34,7 +34,7 @@ This page serves as a log of quotes I've found that left some lasting impression
 </cite>
 
 
-<ul>
+<!--<ul>
 {% for quote in site.data.quotes %}
   <li>
     > {{quote.quote}}
@@ -44,4 +44,4 @@ This page serves as a log of quotes I've found that left some lasting impression
     </cite>
   </li>
 {% endfor %}
-</ul>
+</ul>--> 
