@@ -19,13 +19,15 @@ tags:
 <hr>
 As a final project for INFO 470, Research Methods in Informatics, I and a team were tasked with conducting a real-world research project on a topic of our choosing.
 We chose to examine the perceived differences between print and digital news. When asked to rate an article on 11 dimensions of credibility (bias, professionalism, accuracy), how would their responses change.
-##### Our question: would the same article be seen as less biased depending on if it was from a printed publication or a web source?
+
+**Our question: would the same article be seen as less biased depending on if it was from a printed publication or a web source?**
 
 If we could discover a common difference in these responses, we could uncover an inherent bias (regardless of actual content) for/against a certain medium.
 
 ![cool graphics]({{site.url}}{{site.baseurl}}/assets/images/newsStudy1.PNG)
 
-To accomplish this, we developed a small interview script where we would have participants read an article on either a print or digital source, rate the article on the aforementioned dimensions, and then read another article in the other medium. It was key that each article we tested was available in print (e.g. in the newspaper) and digital (e.g. on that newspaper's website), so that we could evaluate the differences in these perceived value for the exact same content.
+To accomplish this, we developed a small interview script where we would have participants read an article on either a print or digital source, rate the article on the aforementioned dimensions, and then read another article in the other medium.
+It was key that each article we tested was available in print (e.g. in the newspaper) and digital (e.g. on that newspaper's website), so that we could evaluate the differences in these perceived value for the exact same content.
 While our study did not interview enough people to reach statistical significance (this project was unfunded and more to demonstrate our knowledge of the content), what data we produced did return both an interesting and a strong correlation towards inherent differences in perception of the articles.
 
 ![cool graphics]({{site.url}}{{site.baseurl}}/assets/images/newsStudy2.PNG)
