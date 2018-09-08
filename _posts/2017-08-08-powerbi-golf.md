@@ -5,8 +5,8 @@ header:
   overlay_image: assets/images/golf.PNG
   overlay_filter: 0.3
   show_overlay_excerpt: true
-  overlay_exerpt:
-    Designed & built an interactive dashboard for a golf tourney. Allows golfers to see their stats & compare against the other golfers.<br>Built using PowerBI for the MSIT Give Golf Tournament.
+  exerpt:
+    "Designed & built an interactive dashboard for a golf tourney. Allows golfers to see their stats & compare against the other golfers.<br>Built using PowerBI for the MSIT Give Golf Tournament."
   teaser: assets/images/golf.PNG
 categories:
   - Portfolio
