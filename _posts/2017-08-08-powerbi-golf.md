@@ -4,7 +4,9 @@ permalink: golf #unique word that will be used as url basesite.com/[word]
 header:
   overlay_image: assets/images/golf.PNG
   overlay_filter: 0.3
-  show_overlay_excerpt: false
+  show_overlay_excerpt: true
+  exerpt:
+    Designed & built an interactive dashboard for a golf tourney. Allows golfers to see their stats & compare against the other golfers.<br>Built using PowerBI for the MSIT Give Golf Tournament.
   teaser: assets/images/golf.PNG
 categories:
   - Portfolio
@@ -16,8 +18,7 @@ tags:
 
 ---
 
-<small>Designed & built an interactive dashboard for a golf tourney. Allows golfers to see their stats & compare against the other golfers.
-<br>Built using PowerBI for the MSIT Give Golf Tournament.</small>
+<small></small>
 
 <hr>
 
@@ -27,8 +28,8 @@ Launch Consulting would be sponsoring one of the holes for the annual MSIT Give 
 
 ![PowerBI Viz]({{site.url}}{{site.baseurl}}/assets/images/golf.PNG)
 
-This dashboard was designed to let the golfers view their swing data (ball speed, distance, etc) online after the tournament, and compare how they & their team did to others.
-<br> This was a big hit at the tournament, and many couldn't wait to get online after it ended to start bragging to their coworkers about how they hit the ball 20MPH faster than James in accounting, or at least something along those lines.
+This dashboard was designed to let the golfers view their swing data (ball speed, distance, etc) after the tournament, and compare how they & their team did to others.
+<br> This was a big hit at the tournament, and many couldn't wait to get online after it ended to start bragging to their coworkers about how they _"hit the ball 20MPH faster than James in accounting"_ (or at least something along those lines).
 
 
 <hr>
