@@ -6,16 +6,16 @@ header:
   teaser: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
 categories:
 #  - Guides
-#  -
+#  - Portfolio
 #  - Uncategorized
 tags:
-  - edge case
-  - featured image
-  - image
-  - layout
+  # - PowerBI
+  # - Visualization
 
 ---
 
-This post should display a **header image**, if the theme supports it.
+<small>desc.</small>
 
-Featured image is an external asset and should load.
+<hr>
+
+[linktext](http://link.com)
