@@ -3,7 +3,8 @@ title: "PowerBI Golf"
 permalink: golf #unique word that will be used as url basesite.com/[word]
 header:
   overlay_image: assets/images/golf.PNG
-  overlay_filter: rgba‎(255, 248, 231, 0.3) 
+  overlay_filter: rgba(255, 0, 0, 0.5)
+  # overlay_filter: rgba‎(255, 248, 231, 0.3)
   show_overlay_excerpt: false
   teaser: assets/images/golf.PNG
 categories:
