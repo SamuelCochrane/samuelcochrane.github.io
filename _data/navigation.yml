@@ -2,6 +2,8 @@
 main:
   - title: "Portfolio"
     url: https://samuelcochrane.github.io/categories/#portfolio
+  - title: "Resume"
+    url: https://docs.google.com/document/d/1dRBSXCdx1pasr3Gom8Ci6Pv-Ll2XffHovCBFjmJfEnw/edit?usp=sharing
   #- title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
