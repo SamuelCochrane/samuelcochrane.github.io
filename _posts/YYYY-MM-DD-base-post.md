@@ -22,7 +22,7 @@ tags:
 <hr>
 
 
-this is a <a class="thumbnail">hoverlink<span><img src="assets\reactionimages\mindblown.gif"><br></span></a>
+this is a <a class="thumbnail">hoverlink<span><img src="{{site.url}}{{site.baseurl}}/assets/reactionimages/mindblown.gif"><br></span></a>
 
 and this is a [normal link](https://google.com)
 
