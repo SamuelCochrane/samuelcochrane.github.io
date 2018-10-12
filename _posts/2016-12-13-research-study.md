@@ -32,7 +32,7 @@ While our study did not interview enough people to reach statistical significanc
 
 ![cool graphics]({{site.url}}{{site.baseurl}}/assets/images/newsStudy2.PNG)
 
-We found that on average about 20% fewer of the respondents considered the same article trustworthy, accurate, and factual when the article was moved from a printed to a digital format, and likewise we discovered a <a class="thumbnail">**25% increase**<span><img src="assets\reactionimages\mindblown.gif"><br></span></a> in the number of respondents who considered the article biased when moved from physical to digital.
+We found that on average about 20% fewer of the respondents considered the same article trustworthy, accurate, and factual when the article was moved from a printed to a digital format, and likewise we discovered a <a class="thumbnail">25% increase<span><img src="assets\reactionimages\mindblown.gif"><br></span></a> in the number of respondents who considered the article biased when moved from physical to digital.
 <br> This data would suggest a **_strong and inherent bias_** to consider news content found online less trustworthy and more biased than news content found in a physical format.
 
 <hr>
