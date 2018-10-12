@@ -22,10 +22,25 @@ tags:
 <hr>
 
 
-this is a <a class="thumbnail">hoverlink<span><img src="assets\reactionimages\mindblown.gif" alt=""><br></span></a>
+this is a <a class="thumbnail">hoverlink<span><img src="assets\reactionimages\mindblown.gif"><br></span></a>
 
 and this is a [normal link](https://google.com)
 
 
 and this is an image
 ![Image Name]({{site.url}}{{site.baseurl}}/assets/images/picfix_welcome.png)
+
+
+> This is a quote
+<br>
+<small><cite>
+> from a guy
+</cite></small>
+
+## title
+
+### sub title
+
+```
+code block
+```
