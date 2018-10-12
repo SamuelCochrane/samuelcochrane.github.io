@@ -26,6 +26,7 @@
 
 .thumbnail span { /*CSS for enlarged image*/
 	position: absolute;
+  width: 200px;
 	background-color: #e5e5e5;
 	padding: 5px;
 	/*left: -1000px;*/
@@ -42,7 +43,4 @@
 
 .thumbnail:hover span { /*CSS for enlarged image on hover*/
 	visibility: visible;
-	width: 200px;
-	top: 5px; /* use IF IE6 style to correct IE6 positions of larger image relative to thumb */
-	left: 300px;/*position where enlarged image should offset horizontally */
 }
