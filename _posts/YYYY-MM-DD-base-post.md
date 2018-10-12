@@ -2,8 +2,10 @@
 title: ""
 permalink: word #unique word that will be used as url basesite.com/[word]
 header:
-  overlay_image: assets/images/[thing]
   teaser: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
+  overlay_image: assets/images/[thing]
+  overlay_filter: 0.3
+  show_overlay_excerpt: false
 categories:
 #  - Guides
 #  - Portfolio
@@ -11,6 +13,7 @@ categories:
 tags:
   # - PowerBI
   # - Visualization
+#toc: true
 
 ---
 
@@ -18,4 +21,11 @@ tags:
 
 <hr>
 
-[linktext](http://link.com)
+
+this is a <a class="thumbnail">hoverlink<span><img src="assets\reactionimages\mindblown.gif" alt=""><br></span></a>
+
+and this is a [normal link](https://google.com)
+
+
+and this is an image
+![Image Name]({{site.url}}{{site.baseurl}}/assets/images/picfix_welcome.png)

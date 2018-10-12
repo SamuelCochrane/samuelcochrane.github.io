@@ -18,11 +18,6 @@ tags:
 ---
 This page serves as a log of quotes I've found that left some lasting impression.
 
-
-this is a <a class="thumbnail">hoverlink<span><img src="assets\reactionimages\larryDavidHmmm.gif" alt=""><br></span></a>
-and this is a [normal link](https://google.com)
-
-
 {% for item in site.data.quotes %}
 > {{item.quote}}
 <br>
