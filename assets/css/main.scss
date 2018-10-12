@@ -11,35 +11,35 @@
 
 /*THUMBNAIL HOVERPOPUPS*/
 .thumbnail  {
-	position: relative;
-	float: left;
-	padding: 5px;
+	// position: relative;
+	// float: left;
+	// padding: 5px;
 	/*z-index: 0;*/
 }
 
 .thumbnail:hover {
-	background-color: #e9e9e2;
-	/*z-index: 50;*/
-	color: #335500;
-	text-decoration: none;
+	// background-color: #e9e9e2;
+	// /*z-index: 50;*/
+	// color: #335500;
+	// text-decoration: none;
 }
 
 .thumbnail span { /*CSS for enlarged image*/
-	position: absolute;
-  width: 300px;
-  top: 5px;
-	left: 300px;
-	background-color: darkGrey;
-	padding: 5px;
+	// position: absolute;
+  // width: 300px;
+  // top: 5px;
+	// left: 300px;
+	// background-color: darkGrey;
+	// padding: 5px;
 	/*left: -1000px;*/
 	// border: 1px solid #666;
 	visibility: hidden;
-	color: black;
-	text-decoration: none;
+	// color: black;
+	// text-decoration: none;
 }
 
 .thumbnail span img { /*CSS for enlarged image*/
-	border-width: 0px;
+	// border-width: 0px;
 	/*padding: 2px;*/
 }
 
@@ -47,4 +47,4 @@
 	visibility: visible;
 }
 
-a.thumbnail:link {color:#ff0000;}
+a.thumbnail:link {color:#ff0f00;}
