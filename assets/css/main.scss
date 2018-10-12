@@ -26,8 +26,8 @@
 
 .thumbnail span { /*CSS for enlarged image*/
 	position: absolute;
-  left: 200px;
-  width: 350px;
+  left: 250px;
+  width: 400px;
   // top: 5px;
 	// background-color: darkGrey;
 	// padding: 5px;
@@ -48,7 +48,7 @@
 	visibility: visible;
 }
 a.thumbnail {
-  color: hotpink;
+  color: black;
   text-decoration: underline dotted black;
 }
 a.thumbnail:hover {
