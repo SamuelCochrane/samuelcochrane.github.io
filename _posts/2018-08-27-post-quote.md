@@ -18,6 +18,10 @@ tags:
 ---
 This page serves as a log of quotes I've found that left some lasting impression.
 
+
+this is some <a class="thumb" href="#">text<span><img src="https://i.imgur.com/NbnyeZ1.mp4" alt=""></span></a>
+
+
 {% for item in site.data.quotes %}
 > {{item.quote}}
 <br>
