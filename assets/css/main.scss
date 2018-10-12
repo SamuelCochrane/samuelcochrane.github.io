@@ -26,13 +26,13 @@
 
 .thumbnail span { /*CSS for enlarged image*/
 	position: absolute;
-  left: 200px;
-  width: 200px;
+  left: 300px;
+  width: 300px;
   // top: 5px;
 	// background-color: darkGrey;
 	// padding: 5px;
 	/*left: -1000px;*/
-	// border: 1px solid #666;
+	border: 1px solid #666;
 	visibility: hidden;
 	// color: black;
 	// text-decoration: none;
@@ -48,4 +48,8 @@
 }
 a.thumbnail {
   color: hotpink;
+  text-decoration: underline dotted hotpink;
+}
+a.thumbnail:hover: {
+
 }
