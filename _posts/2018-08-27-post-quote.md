@@ -19,7 +19,7 @@ tags:
 This page serves as a log of quotes I've found that left some lasting impression.
 
 
-this is a <a class="thumbnail">hoverlink<span><img src="https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg" alt=""><br> </span></a>
+this is a <a class="thumbnail">hoverlink<span><img src="https://i.imgur.com/qzLswba.jpg" alt=""><br></span></a>
 and this is a [normal link](https://google.com)
 
 
