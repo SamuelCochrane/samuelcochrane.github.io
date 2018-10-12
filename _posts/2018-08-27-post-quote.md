@@ -19,7 +19,7 @@ tags:
 This page serves as a log of quotes I've found that left some lasting impression.
 
 
-this is some <a class="thumb" href="#">text<span><img src="https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg" alt=""></span></a>
+this is some <a class="thumbnail" href="#">text<span><img src="https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg" alt="Little Egret"><br> Little Egret</span></a>
 
 
 {% for item in site.data.quotes %}
