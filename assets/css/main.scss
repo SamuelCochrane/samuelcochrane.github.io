@@ -26,7 +26,7 @@
 
 .thumbnail span { /*CSS for enlarged image*/
 	position: absolute;
-  left: 100px;
+  left: -100px;
   // width: 300px;
   // top: 5px;
 	// background-color: darkGrey;
@@ -46,5 +46,3 @@
 .thumbnail:hover span { /*CSS for enlarged image on hover*/
 	visibility: visible;
 }
-
-a.thumbnail:link {color:#ff0f00;}
