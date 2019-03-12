@@ -40,5 +40,5 @@ All together, a functional product will need to:
 ### Initial Setup
 
 ![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100327.png)
-Let's begin by 
 
+Let's begin by
