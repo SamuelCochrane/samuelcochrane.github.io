@@ -63,7 +63,7 @@
 
   img {
     width: 100%;
-    
+
     &.emoji {
       width: 20px;
       height: 20px;
@@ -140,7 +140,7 @@
 .author__content {
   display: table-cell;
   vertical-align: top;
-  padding-left: 15px;
+  padding-left: 0px;
   padding-right: 25px;
   line-height: 1;
 
@@ -315,4 +315,3 @@
     margin-right: initial;
   }
 }
-
