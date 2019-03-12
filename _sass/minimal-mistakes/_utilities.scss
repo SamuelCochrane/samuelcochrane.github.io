@@ -460,6 +460,9 @@ body:hover .visually-hidden button {
     margin-bottom: 0;
     font-size: $type-size-6;
   }
+  img {
+    max-width: 25%;
+  }
 }
 
 a.reversefootnote {
