@@ -26,12 +26,12 @@ Our theoretical company, let's call them "Snap Inc"[^1], sells luxury sunglasses
 <hr>
 
 All together, a functional product will need to:
-1. [ ] Create a new log row when a customer emails us.
-  - [ ] Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)
-- [ ] Update the status of the ticket when we respond.
-  - [ ] Update the `Status` field to `Replied` when an email is sent back.
-  - [ ] Update the `Status` field to `Completed` when we send a "ticket is completed" email.
-  - [ ] Update the `Responder` field with the name of who responded.
+☐ Create a new log row when a customer emails us.\
+	☐ Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)\
+☐ Update the status of the ticket when we respond.\
+	☐ Update the `Status` field to `Replied` when an email is sent back.\
+	☐ Update the `Status` field to `Completed` when we send a "ticket is completed" email.\
+	☐ Update the `Responder` field with the name of who responded.\
 
 here's a longer one.[^bignote]
 
