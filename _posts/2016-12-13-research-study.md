@@ -1,17 +1,12 @@
 ---
-title: "Research Study"
+title: Research Study
 toc: false
-#permalink: word #unique word that will be used as url basesite.com/[word]
 header:
-  #image: assets/images/newsStudy1.PNG
   teaser: assets/images/newsStudy1.PNG
 categories:
   - Portfolio
-#  -
-#  - Uncategorized
-tags:
-
-
+tags: null
+published: true
 ---
 
 # Perceived Credibility of Print vs Digital News
@@ -24,7 +19,7 @@ We chose to examine the perceived differences between print and digital news. Wh
 
 If we could discover a common difference in these responses, we could uncover an inherent bias (regardless of actual content) for/against a certain medium.
 
-![cool graphics]({{site.url}}{{site.baseurl}}/assets/images/newsStudy1.PNG)
+![cool graphics](/assets/images/newsStudy1.PNG)
 
 To accomplish this, we developed a small interview script where we would have participants read an article on either a print or digital source, rate the article on the aforementioned dimensions, and then read another article in the other medium.
 It was key that each article we tested was available in print (e.g. in the newspaper) and digital (e.g. on that newspaper's website), so that we could evaluate the differences in these perceived value for the exact same content.
