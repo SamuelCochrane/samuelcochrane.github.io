@@ -35,18 +35,6 @@ All together, a functional product will need to:
 	- [ ]   Update the `Status` field to `Replied` when an email is sent back.  
 	- [ ]   Update the `Status` field to `Completed` when we send a "ticket is completed" email.  
 	- [ ]   Update the `Responder` field with the name of who responded. 
-  
-
-
-here's a longer one.
-
-[^1]: Here's one with multiple paragraphs and code.
-
-    Indent paragraphs to include them in the footnote.
-
-    `{ my code }`
-
-    Add as many paragraphs as you like.
 
 ### Initial Setup
 
