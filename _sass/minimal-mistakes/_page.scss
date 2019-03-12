@@ -21,7 +21,6 @@
 
 .page {
   @include breakpoint($large) {
-    float: right;
     width: auto;
     padding-right: $right-sidebar-width-narrow;
   }
