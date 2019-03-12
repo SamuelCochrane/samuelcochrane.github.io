@@ -1,6 +1,6 @@
 ---
-title: "Automating an email log with MS Flow"
-permalink: logflow #unique word that will be used as url basesite.com/[word]
+title: Automating an email log with MS Flow
+permalink: logflow
 header:
   overlay_image: assets/images/golf.PNG
   overlay_filter: 0.3
@@ -8,13 +8,11 @@ header:
   teaser: assets/images/golf.PNG
 categories:
   - Portfolio
-#  -
-#  - Uncategorized
 tags:
   - Automation
   - MS Flow
   - Outlook
-
+published: true
 ---
 
 Some text[^1].
