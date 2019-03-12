@@ -26,7 +26,7 @@ Our theoretical company, let's call them "Snap Inc"[^coincidence], sells luxury 
 [^coincidence]: Any resemblance to actual companies or products is purely coincidental.
 
 <hr>
-![Annotation 2019-03-12 100327.png]({{site.baseurl}}/assets/images/Annotation 2019-03-12 100327.png)
+![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100327.png)
 
 All together, a functional product will need to:
 - [ ]  Create a new log row when a customer emails us.  
