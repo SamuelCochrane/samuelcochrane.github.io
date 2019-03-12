@@ -20,11 +20,11 @@ Lets look at how we can automate the logging of all activity done on a theoretic
 
 
 ###The Scenario
-Our theoretical company, let's call them "Snap Inc"\[^1], sells luxury sunglasses that have a tendency to *break all the goddamn time*. Customers can email support@VeryCoolSunglasses<nolink>.com for help. Each pair of glasses comes with a unique ID the customer will need to provide.
-[^1]:  Any resemblance to actual companies or products is purely coincidental.
+Our theoretical company, let's call them "Snap Inc", sells luxury sunglasses that have a tendency to *break all the goddamn time*. Customers can email support@VeryCoolSunglasses<nolink>.com for help. Each pair of glasses comes with a unique ID the customer will need to provide.
+  Any resemblance to actual companies or products is purely coincidental.
 
 <hr>
-![Annotation 2019-03-12 100327.png]({{site.baseurl}}/_posts/Annotation 2019-03-12 100327.png)
+![Annotation 2019-03-12 100327.png]({{site.baseurl}}/assets/images/Annotation 2019-03-12 100327.png)
 
 All together, a functional product will need to:
 - [ ]  Create a new log row when a customer emails us.  
@@ -36,9 +36,9 @@ All together, a functional product will need to:
   
 
 
-here's a longer one.[^test]
+here's a longer one.[^1]
 
-[^test]: Here's one with multiple paragraphs and code.
+[^1]: Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
 
