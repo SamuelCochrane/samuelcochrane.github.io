@@ -41,7 +41,7 @@ All together, a functional product will need to:
   
 ## Initial Setup
   
-Let's begin by creating a new flow set to trigger whenever an email is recieved by our support inbox.
+Let's begin by creating a new flow set to trigger whenever an email is received by our support inbox.
 <figure class="half">
 ![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100327.png)
 ![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100438.png)
