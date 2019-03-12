@@ -27,7 +27,7 @@ Our theoretical company, let's call them "Snap Inc"[^coincidence], sells luxury 
 [^broke]: ![20180725_215647.jpg]({{site.imgurl}}/20180725_215647.jpg)
 
   
-<hr>
+---
 
 All together, a functional product will need to:
 - Create a new log row when a customer emails us.  
@@ -40,7 +40,9 @@ All together, a functional product will need to:
   
   
 ## Initial Setup
-
+  
+Let's begin by creating a new flow set to trigger whenever an email is recieved by our support inbox.
+<figure class="half">
 ![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100327.png)
-
-Let's begin by
+![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100438.png)
+</figure>
