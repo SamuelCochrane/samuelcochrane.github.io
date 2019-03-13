@@ -56,10 +56,9 @@ All together, a functional product will need to:
   	□ Assign the ticket to the correct processor automatically.
   	□ Add the email date/time automatically.
     □ Add the ticket number automatically.
-□  Update the status of the ticket when we respond.  
+□  Update the ticket when we respond.  
 	□ Update the Status field to Replied when an email is sent back.  
 	□ Update the Status field to Completed when we send a "ticket is completed" email.  
-	□ Update the Responder field with the name of who responded.
 ```
 
 
@@ -124,7 +123,16 @@ And we'll set the `Add a row` to only run if `Get a Row` failed.
 
 Let's see how we're doing on that checklist of features
 
-[checklist update]
+```
+☑ Create a new log row when a customer emails us.  
+	☑ Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)
+  	□ Assign the ticket to the correct processor automatically.
+  	□ Add the email date/time automatically.
+    □ Add the ticket number automatically.
+☑  Update the ticket when we respond.  
+	□ Update the Status field to Replied when an email is sent back.  
+	□ Update the Status field to Completed when we send a "ticket is completed" email.  
+```
 
 Nice! Now that we have the logic to create and update log lines respectively, we'll need some logic to actually figure out what to put there.
 
@@ -153,6 +161,7 @@ So, let's create a lookup table to that affect. We'll add a tab to our log file,
 ![Annotation 2019-03-13 133355](/assets/images/Annotation%202019-03-13%20133355.png)
 
 Then, we'll do a `Get a Row` block[^getproc]: as follows:
+
 [^getproc]:You might want to rename the block to "Get Processor" at this time using the `…` button like I did for sanity's sake.
 
 ![Annotation 2019-03-13 135839](/assets/images/Annotation%202019-03-13%20135839.png)
@@ -166,7 +175,8 @@ Remember that when a processor responds to a ticket, they'll do so via Reply All
 
 Here's the plan. Let's create a new variable for status, and set it using some contextual if-checks on the content of the email.
 
-Our first check should see if this email was sent by us or the customer. Add a `Condition` block set to check the email was  `From` our alias. If not, it was sent by the customer and we can set the `Status` variable to "Customer Responded"[^custresp].
+Our first check should see if this email was sent by us or the customer. Add a `Condition` block set to check the email was  `From` our alias. If not, it was sent by the customer and we can set the `Status` variable to "Customer Responded".[^custresp]
+
 [^custresp]: We could technically add some logic here to read what type of response the customer sent, but that's both a little too complex for this tutorial, and a little unnecessary.
 
 ![Annotation 2019-03-13 153528](../assets/images/Annotation%202019-03-13%20153528.png)
@@ -200,8 +210,9 @@ Our final `Add a row` block will look as follows.
 
 ![Annotation 2019-03-13 143929](../assets/images/Annotation%202019-03-13%20143929.png)
 
-Make sure your icons/colors match what I have here, MS Flow allows multiple objects to have the same name if they're from different contexts. Especially make sure your `Processor` variable is from our `Get Processor` block and not from our `Get a Row` block.[^proc]
-[^proc]: I've done this before. Since the `Get a Row` block failed, its `Processor` variable will be empty, meaning we will be adding rows with an assigned processor of " ".
+Make sure your icons/colors match what I have here, MS Flow allows multiple objects to have the same name if they're from different contexts. Especially make sure your `Processor` variable is from our `Get Processor` block and not from our `Get a Row` block.[^procblock2]
+
+[^procblock2]: I've done this before. Since the `Get a Row` block failed, its `Processor` variable will be empty, meaning we will be adding rows with an assigned processor of " ".
 
 ![Annotation 2019-03-13 143755](../assets/images/Annotation%202019-03-13%20143755.png)
 
@@ -215,6 +226,7 @@ Our final `Update a row` block will look as follows.
 We'll grab the row with the matching ticket number and update the status to whatever our `Status` variable ended up as.
 We'll also update the MS Flow log field with what we changed and when.[^flowlog]
 Leave the other fields blank as they aren't changing.
+
 [^flowlog]: Note the green variable is grabbing whatever the `MS Flow log` currently is and adding that back in before we add a new line to it. Without this we'll only ever have the most recent status change as it keeps overwriting itself.
 
 Congrats! Your log will now automatically update the status of tickets for you.
