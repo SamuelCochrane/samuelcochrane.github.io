@@ -47,7 +47,6 @@ The basic log is a shared excel file, and currently looks like this.
   
 ![Annotation 2019-03-13 120030.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 120030.png)
 
-
 As you can imagine, there's a lot of room here for human error. One of the processors could miss an email and no log line would be created for it. They could misstype a log line. Finally, this just kinda feels like a waste of time doesn't it? It would be much better if the log tracked everything itself and just acted as a passive tracking solution.
 
 ---
@@ -72,14 +71,12 @@ All together, a functional product will need to:
 Let's begin by creating a new flow set to trigger whenever an email is received by our support inbox.
 
 {% include gallery id="gallery" caption="" %}
-  
-
 
 You might notice all of our actions will boil down to either creating a new log line or updating an existing one. So, first we should check if the Case# in the subject line maps to an existing ticket.
 
-	First, let's create a few new fields in our log.
+First, let's create a few new fields in our log.
   
-  ![Annotation 2019-03-13 122653.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 122653.png)
+![Annotation 2019-03-13 122653.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 122653.png)
 
 The TicketID field will grab the ID from the subject line, making it easier to track things.
 
@@ -94,14 +91,12 @@ This will create a new variable we can use throughout the flow. We'll grab the n
   substring(triggerBody()?['Subject'], indexOf(triggerBody()?['Subject'], '#'), 8)
   ```
   
- We know that the subject of every email will look something like `Update to Spectacles Support Case #27307612`
-
- This will find the character `#` and grab the 8 digit string that follows it.
+ We know that the subject of every email will look something like `Update to Spectacles Support Case #27307612`, so this will find the character `#` and grab the 8 digit string that follows it.
   
   Next, let's check if we have a log line for this ticket already.
   We'll create a `Get a Row` request using the `Ticket Number` variable as a key. If there's no ticket yet, this will fail.
   
-  ![Annotation 2019-03-13 124633.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 124633.png)
+![Annotation 2019-03-13 124633.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 124633.png)
 
  Now we can add two parallel steps, one to create a new row, and one to update an existing row.
   
