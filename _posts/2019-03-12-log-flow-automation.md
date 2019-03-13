@@ -13,6 +13,13 @@ tags:
   - MS Flow
   - Outlook
 published: true
+gallery:
+  - image_path: /assets/images/Annotation 2019-03-12 100327.png
+    alt: placeholder image 1
+    title: Image 1 title caption
+  - image_path: /assets/images/Annotation 2019-03-12 100438.png
+    alt: placeholder image 2
+    title: Image 2 title caption
 ---
 
 Love it or hate it, a lot of work is still done through email. Keeping a log of emails and responses can give a massive edge.
@@ -45,6 +52,5 @@ All together, a functional product will need to:
 
 Let's begin by creating a new flow set to trigger whenever an email is received by our support inbox.
 
-![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100327.png)
-![Annotation 2019-03-12 100327.png]({{site.imgurl}}/Annotation 2019-03-12 100438.png)
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
 
