@@ -214,9 +214,15 @@ Our final `Update a row` block will look as follows.
 
 We'll grab the row with the matching ticket number and update the status to whatever our `Status` variable ended up as.
 We'll also update the MS Flow log field with what we changed and when.[^flowlog]
-[^flowlog]: note the green variable is grabbing whatever the `MS Flow log` currently is and adding that back in before we add a new line to it. Without this we'll only ever have the most recent status change as it keeps overwriting itself.
-
 Leave the other fields blank as they aren't changing.
+[^flowlog]: Note the green variable is grabbing whatever the `MS Flow log` currently is and adding that back in before we add a new line to it. Without this we'll only ever have the most recent status change as it keeps overwriting itself.
+
+Congrats! Your log will now automatically update the status of tickets for you.
+As a bonus, you now have the `MS Flow log` field recording when each update to the ticket was made.
+
+![Annotation 2019-03-13 163233](../assets/images/Annotation%202019-03-13%20163233_s0bvzk7jp.png)
+
+That gives you some nice data to work with if you ever want to audit how long one of your processors takes to respond to customers.
 
 
 ## Wrapup
@@ -225,14 +231,7 @@ Your final flow will look something like this:
 
 ![Annotation 2019-03-13 162531](../assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png)
 
-st
-s
-s
-df
-asd
-f
-asdf
-as
-df
+Wowee, we did it! Give yourself a solid pat on the back for saving literally ***minutes*** of time. What's that? That doesn't seem like very much? But remember, this is minutes saved ***on every single ticket for the rest of time***. That adds up to, like, a lot of minutes.
+![C25RYO3UoAAloyK](../assets/images/C25RYO3UoAAloyK.jpg)
 
 ---
