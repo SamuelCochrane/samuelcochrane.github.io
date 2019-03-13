@@ -111,9 +111,8 @@ And we'll set the `Add a row` to only run if `Get a Row` failed.
 
 <figure class="half">
 
-![Annotation 2019-03-13 125144.png]({{site.imgurl}}/Annotation 2019-03-13 125144.png)
-
-![Annotation 2019-03-13 125208.png]({{site.imgurl}}/Annotation 2019-03-13 125208.png)
+<img src="{{site.imgurl}}/Annotation 2019-03-13 125144.png)">
+<img src="{{site.imgurl}}/Annotation 2019-03-13 125208.png)">
 
 </figure>
 
