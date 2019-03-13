@@ -141,7 +141,7 @@ Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.
 
 So, let's create a lookup table to that affect. We'll add a tab to our log file, and make a table as shown below. Remember to `Format As Table` so that MS Flow can detect it.
 
-![Annotation 2019-03-13 133355.png]({{site.imgurl}}//Annotation 2019-03-13 133355.png)
+![Annotation 2019-03-13 133355.png]({{site.imgurl}}/Annotation 2019-03-13 133355.png)
 
 Then, we'll do a `Get a Row` block as follows
 
