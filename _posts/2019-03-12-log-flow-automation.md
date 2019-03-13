@@ -160,6 +160,35 @@ Key Value: `substring(variables('Ticket Number'),  sub(variables('Ticket Number'
 
 Our expression below will grab the last digit of the ticket number, and the block will use this digit to grab the corresponding row of the processor lookup table.
 
+### Status
+This will be our most complex variable by far. We'll need to check the content of an email to determine what type of response was sent and set it accordingly. Luckily, our team is using templated responses so we can do string matching to detect what kind of email was sent fairly easily.
+Remember that when a processor responds to a ticket, they'll do so via Reply All thus sending their response back to the support Inbox, this way the other requestors can see how they're responding. This means our Flow will be reading both customer responses and processor responses.
+
+Here's the plan. Let's create a new variable for status, and set it using some contextual if-checks on the content of the email.
+
+Our first check should see if this email was sent by us or the customer. Add a `Condition` block set to check the email was  `From` our alias. If not, it was sent by the customer and we can set the `Status` variable to "Customer Responded"[^custresp].
+[^custresp]: We could technically add some logic here to read what type of response the customer sent, but that's both a little too complex for this tutorial, and a little unnecessary.
+
+![Annotation 2019-03-13 153528](../assets/images/Annotation%202019-03-13%20153528.png)
+
+If it ***was*** sent by us, we'll need to figure out which of our templated responses it was.
+
+For each of our common responses, we'll add another `Condition` block inside of whichever `If` wasn't used last time.
+So for instance, in the `If yes` of the block we just outlined, we'll add something like this.
+
+![Annotation 2019-03-13 160358](../assets/images/Annotation%202019-03-13%20160358_efbowf1qk.png)
+
+Here we check if the `Body` of the email `contains` the string we pasted here. Note that you should only paste what will be consistent across all of the responses, don't paste in names or anything else contextual.
+If it's a match, we'll set the `Status` variable to the appropriate value.
+
+Then we'll put our next check in the `If no` and so on.
+
+![Annotation 2019-03-13 160945](../assets/images/Annotation%202019-03-13%20160945_wfc1wnmga.png)
+
+
+
+Is it ugly nesting them like this? Absolutely, but MS Flow's `Switch` block doesn't let us match against `contains` values, only exact matches. So, nested `If`'s it is.
+
 # Add & Update Revisited
 
 Now that we have our SuperCoolDynamicVariables™️ we can get back to our add and update blocks.
@@ -171,18 +200,39 @@ Our final `Add a row` block will look as follows.
 
 ![Annotation 2019-03-13 143929](../assets/images/Annotation%202019-03-13%20143929.png)
 
-Make sure the icons/colors on your end match, MS Flow allows multiple objects to have the same name if they're from different contexts. Especially make sure your `Processor` variable is from our `Get Processor` block and not from our `Get a Row` block.[^proc]
+Make sure your icons/colors match what I have here, MS Flow allows multiple objects to have the same name if they're from different contexts. Especially make sure your `Processor` variable is from our `Get Processor` block and not from our `Get a Row` block.[^proc]
 [^proc]: I've done this before. Since the `Get a Row` block failed, its `Processor` variable will be empty, meaning we will be adding rows with an assigned processor of " ".
 
 ![Annotation 2019-03-13 143755](../assets/images/Annotation%202019-03-13%20143755.png)
 
 ### Update an existing ticket
 
-CONTENT
+Our final `Update a row` block will look as follows.
+
+![Annotation 2019-03-13 161700](../assets/images/Annotation%202019-03-13%20161700_8bo1gg58s.png)
+
+
+We'll grab the row with the matching ticket number and update the status to whatever our `Status` variable ended up as.
+We'll also update the MS Flow log field with what we changed and when.[^flowlog]
+[^flowlog]: note the green variable is grabbing whatever the `MS Flow log` currently is and adding that back in before we add a new line to it. Without this we'll only ever have the most recent status change as it keeps overwriting itself.
+
+Leave the other fields blank as they aren't changing.
+
+
+## Wrapup
+
+Your final flow will look something like this:
+
+![Annotation 2019-03-13 162531](../assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png)
+
+st
+s
+s
+df
+asd
+f
+asdf
+as
+df
 
 ---
-
-
-
-
-Remember that when a processor responds to a ticket, they'll do so via Reply All thus sending their response back to the support Inbox, this way the other requestors can see how they're responding.
