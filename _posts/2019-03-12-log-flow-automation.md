@@ -38,14 +38,14 @@ Customers can complete a form on the website which will generate an email to sup
 All of the requestors can send email via the support alias.
 When they respond, they use templated responses and include their name for the customer. A response might look something like this.
 
-![Annotation 2019-03-13 120058.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 120058.png)
+![Annotation 2019-03-13 120058.png]({{site.imgurl}}/Annotation 2019-03-13 120058.png)
 
 Since they're sending from an alias, they respond with a Reply All thus bringing their sent response back to the inbox. This is so the other processors can check their work for auditing purposes.
   
 They all periodically check the inbox and when they find a ticket ending in their digits, manually create a new log line for it. When they respond to the tickets, they'll update the Status accordingly. 
 The basic log is a shared excel file, and currently looks like this.
   
-![Annotation 2019-03-13 120030.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 120030.png)
+![Annotation 2019-03-13 120030.png]({{site.imgurl}}/Annotation 2019-03-13 120030.png)
 
 As you can imagine, there's a lot of room here for human error. One of the processors could miss an email and no log line would be created for it. They could misstype a log line. Finally, this just kinda feels like a waste of time doesn't it? It would be much better if the log tracked everything itself and just acted as a passive tracking solution.
 
@@ -76,14 +76,14 @@ You might notice all of our actions will boil down to either creating a new log 
 
 First, let's create a few new fields in our log.
   
-![Annotation 2019-03-13 122653.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 122653.png)
+![Annotation 2019-03-13 122653.png]({{site.imgurl}}/Annotation 2019-03-13 122653.png)
 
 The TicketID field will grab the ID from the subject line, making it easier to track things.
 
 
 Now, let's build the logic for the TicketID field.
 
-![Annotation 2019-03-13 123357.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 123357.png)
+![Annotation 2019-03-13 123357.png]({{site.imgurl}}/Annotation 2019-03-13 123357.png)
 
 This will create a new variable we can use throughout the flow. We'll grab the number from the subject using the following expression:
   
@@ -96,17 +96,23 @@ This will create a new variable we can use throughout the flow. We'll grab the n
   Next, let's check if we have a log line for this ticket already.
   We'll create a `Get a Row` request using the `Ticket Number` variable as a key. If there's no ticket yet, this will fail.
   
-![Annotation 2019-03-13 124633.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 124633.png)
+![Annotation 2019-03-13 124633.png]({{site.imgurl}}/Annotation 2019-03-13 124633.png)
 
  Now we can add two parallel steps, one to create a new row, and one to update an existing row.
   
-  ![Annotation 2019-03-13 124911.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 124911.png)
+![Annotation 2019-03-13 124911.png]({{site.imgurl}}/Annotation 2019-03-13 124911.png)
 
   And we'll set the `Add a row` to only run if `Get a Row` failed.
   
-  	![Annotation 2019-03-13 125144.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 125144.png)
-	![Annotation 2019-03-13 125208.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 125208.png)
+![Annotation 2019-03-13 125144.png]({{site.imgurl}}/Annotation 2019-03-13 125144.png)
+![Annotation 2019-03-13 125208.png]({{site.imgurl}}/Annotation 2019-03-13 125208.png)
 
+
+Nice! Now that we have the logic to create and update log lines, we'll need some logic to actually figure out what to put there.
   
+![Annotation 2019-03-13 130759.png]({{site.imgurl}}/Annotation 2019-03-13 130759.png)
+  
+  
+  ----
  
   Remember that when a processor responds to a ticket, they'll do so via Reply All thus sending their response back to the support Inbox, this way the other requestors can see how they're responding.
