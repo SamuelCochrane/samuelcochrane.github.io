@@ -111,8 +111,8 @@ And we'll set the `Add a row` to only run if `Get a Row` failed.
 
 <figure class="half">
 
-<img src="{{site.imgurl}}/Annotation 2019-03-13 125144.png)">
-<img src="{{site.imgurl}}/Annotation 2019-03-13 125208.png)">
+<img src="{{site.imgurl}}/Annotation 2019-03-13 125144.png">
+<img src="{{site.imgurl}}/Annotation 2019-03-13 125208.png">
 
 </figure>
 
@@ -125,6 +125,8 @@ Nice! Now that we have the logic to create and update log lines, we'll need some
 ![Annotation 2019-03-13 130759.png]({{site.imgurl}}/Annotation 2019-03-13 130759.png)
 
 ## Contextual Variables
+
+Let's give ourselves some variables to hold the dynamic content we'll end up needing when adding or creating a row. All of these blocks should occur before our split
 
 ### Time
 
@@ -139,9 +141,13 @@ Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.
 
 So, let's create a lookup table to that affect. We'll add a tab to our log file, and make a table as shown below. Remember to `Format As Table` so that MS Flow can detect it.
 
-![Annotation 2019-03-13 133355.png]({{site.baseurl}}/_posts/Annotation 2019-03-13 133355.png)
+![Annotation 2019-03-13 133355.png]({{site.imgurl}}//Annotation 2019-03-13 133355.png)
+
+Then, we'll do a `Get a Row` block as follows
 
 
+
+```substring(variables('Ticket Number'),  sub(variables('Ticket Number'),1), 1)```
 
 ----
  
