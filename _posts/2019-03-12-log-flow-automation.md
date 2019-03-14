@@ -2,7 +2,7 @@
 title: Automating an email log with MS Flow
 permalink: logflow
 header:
-  overlay_image: assets/images/golf.PNG
+  overlay_image: assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
   overlay_filter: 0.3
   show_overlay_excerpt: false
   teaser: assets/images/golf.PNG
