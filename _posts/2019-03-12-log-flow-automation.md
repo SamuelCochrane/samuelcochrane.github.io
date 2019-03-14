@@ -254,7 +254,6 @@ Wowee, we did it! Give yourself a solid pat on the back for saving literally ***
 
 ![C25RYO3UoAAloyK](../assets/images/C25RYO3UoAAloyK.jpg)
 
+
+
 That's it for today. If your brain is humming with ideas on more things we could add here to automate *even more things*, then I've done my job.
-
-
----
