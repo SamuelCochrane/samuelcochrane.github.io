@@ -11,7 +11,7 @@ categories:
 tags:
   - Automation
   - MS Flow
-  - Outlook
+  - Email
 published: true
 
 ---
@@ -53,9 +53,10 @@ All together, a functional product will need to:
 ```
 □ Create a new log row when a customer emails us.  
 	□ Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)
+        □ Add the ticket number automatically.
   	□ Assign the ticket to the correct processor automatically.
   	□ Add the email date/time automatically.
-    □ Add the ticket number automatically.
+
 □  Update the ticket when we respond.  
 	□ Update the Status field to Replied when an email is sent back.  
 	□ Update the Status field to Completed when we send a "ticket is completed" email.  
@@ -75,8 +76,7 @@ Let's begin by creating a new flow set to trigger whenever an email is received 
 </figure>
 
 You might notice all of our actions will boil down to either creating a new log line or updating an existing one.
-
-  So, first we should check if the case number in the subject line maps to an existing ticket. If it does
+  So, first we should check if the case number in the subject line maps to an existing ticket. If it does, update a ticket. If it doesn't, create a new one.
 
 First, let's create a few new fields in our log.
 
@@ -84,12 +84,15 @@ First, let's create a few new fields in our log.
 
 
 The TicketID field will grab the ID from the subject line, making it easier to track things.
+The MS Flow log field will track every status update made by the system.
 
-###Ticket Number
+### Ticket Number
+
 Now, let's build the logic for the TicketID field.
 
-We know that the subject of every email will look something like `Update to Spectacles Support Case #27307612`, so this will find the character `#` and grab the 8 digit string that follows it.
-This will create a new variable called `Ticket Number` we can use throughout the flow.
+We know that the subject of every email will look something like "`Update to Spectacles Support Case #27307612`", so this will find the character `#` and grab the 8 digit string that follows it.
+
+The block below will create a new variable called `Ticket Number` we can use throughout the flow.
 
 ![Annotation 2019-03-13 123357.png](../assets/images/Annotation%202019-03-13%20123357.png)
 Value: `substring(triggerBody()?['Subject'], indexOf(triggerBody()?['Subject'], '#'), 8)`
@@ -126,9 +129,10 @@ Let's see how we're doing on that checklist of features
 ```
 ☑ Create a new log row when a customer emails us.  
 	☑ Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)
+        ☑ Add the ticket number automatically.
   	□ Assign the ticket to the correct processor automatically.
   	□ Add the email date/time automatically.
-    □ Add the ticket number automatically.
+
 ☑  Update the ticket when we respond.  
 	□ Update the Status field to Replied when an email is sent back.  
 	□ Update the Status field to Completed when we send a "ticket is completed" email.  
@@ -138,7 +142,7 @@ Nice! Now that we have the logic to create and update log lines respectively, we
 
 ![Annotation 2019-03-13 130759](../assets/images/Annotation%202019-03-13%20130759.png)
 
----
+
 
 ## Contextual Variables
 
@@ -156,26 +160,29 @@ and convert it from ugly machine-readable UTC time (`2019-03-7T14:47:06.9459017Z
 We know that tickets are assigned by the last digit of the ticket number:
 Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.
 
-So, let's create a lookup table to that affect. We'll add a tab to our log file, and make a table as shown below. Remember to `Format As Table` so that MS Flow can detect it.
+So, let's create a lookup table to that effect. We'll add a tab to our log file, and make a table as shown below. Remember to `Format As Table` so that MS Flow can detect it.
 
 ![Annotation 2019-03-13 133355](/assets/images/Annotation%202019-03-13%20133355.png)
 
-Then, we'll do a `Get a Row` block[^getproc]: as follows:
+Then, we'll do a `Get a Row` block[^getproc] as follows:
 
 [^getproc]:You might want to rename the block to "Get Processor" at this time using the `…` button like I did for sanity's sake.
 
 ![Annotation 2019-03-13 135839](/assets/images/Annotation%202019-03-13%20135839.png)
+
 Key Value: `substring(variables('Ticket Number'),  sub(variables('Ticket Number'),1), 1)`
 
-Our expression below will grab the last digit of the ticket number, and the block will use this digit to grab the corresponding row of the processor lookup table.
+Our expression will grab the last digit of the ticket number, and the block will use this digit to grab the corresponding row of the processor lookup table.
 
 ### Status
-This will be our most complex variable by far. We'll need to check the content of an email to determine what type of response was sent and set it accordingly. Luckily, our team is using templated responses so we can do string matching to detect what kind of email was sent fairly easily.
+This will be our most complex variable by far. We'll need to check the content of an email to determine what type of response was sent and set it accordingly. Luckily, our team is using templated responses so we can do string matching to detect what kind of email was sent fairly easily.  
 Remember that when a processor responds to a ticket, they'll do so via Reply All thus sending their response back to the support Inbox, this way the other requestors can see how they're responding. This means our Flow will be reading both customer responses and processor responses.
 
 Here's the plan. Let's create a new variable for status, and set it using some contextual if-checks on the content of the email.
 
-Our first check should see if this email was sent by us or the customer. Add a `Condition` block set to check the email was  `From` our alias. If not, it was sent by the customer and we can set the `Status` variable to "Customer Responded".[^custresp]
+Our first check should see if this email was sent by us or the customer.  
+Add a `Initialize variable` block to give us a blank `Status` variable to work with.   
+Add a `Condition` block set to check the email was  `From` our alias. If not, it was sent by the customer and we can set the `Status` variable to "Customer Responded".[^custresp]
 
 [^custresp]: We could technically add some logic here to read what type of response the customer sent, but that's both a little too complex for this tutorial, and a little unnecessary.
 
@@ -184,7 +191,7 @@ Our first check should see if this email was sent by us or the customer. Add a `
 If it ***was*** sent by us, we'll need to figure out which of our templated responses it was.
 
 For each of our common responses, we'll add another `Condition` block inside of whichever `If` wasn't used last time.
-So for instance, in the `If yes` of the block we just outlined, we'll add something like this.
+So for instance, in the `If yes` field of the block we just outlined, we'll add something like this.
 
 ![Annotation 2019-03-13 160358](../assets/images/Annotation%202019-03-13%20160358_efbowf1qk.png)
 
@@ -199,9 +206,9 @@ Then we'll put our next check in the `If no` and so on.
 
 Is it ugly nesting them like this? Absolutely, but MS Flow's `Switch` block doesn't let us match against `contains` values, only exact matches. So, nested `If`'s it is.
 
-# Add & Update Revisited
+## Add & Update Revisited
 
-Now that we have our SuperCoolDynamicVariables™️ we can get back to our add and update blocks.
+Now that we have our SuperCoolDynamicVariables™️ we can go back to our Add and Update blocks and give them some functionality.
 
 ### Add a new ticket
 
@@ -243,7 +250,9 @@ Your final flow will look something like this:
 
 ![Annotation 2019-03-13 162531](../assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png)
 
-Wowee, we did it! Give yourself a solid pat on the back for saving literally ***minutes*** of time. What's that? That doesn't seem like very much? But remember, this is minutes saved ***on every single ticket for the rest of time***. That adds up to, like, a lot of minutes.
+Wowee, we did it! Give yourself a solid pat on the back for saving literally ***minutes*** of time. What's that? That doesn't seem like very much? But remember, this is minutes saved ***on every single ticket for the rest of time***. That adds up to whole heck of a lot of minutes.
+
 ![C25RYO3UoAAloyK](../assets/images/C25RYO3UoAAloyK.jpg)
 
+That's it for today. If your brain is humming with ideas on more things we could add here to automate *even more things*, then I've done my job.
 ---
