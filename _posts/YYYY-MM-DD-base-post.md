@@ -7,7 +7,8 @@ header:
   overlay_filter: 0.3
   show_overlay_excerpt: false
 categories:
-#  - Guides
+#  - Guides#  - Guides
+
 #  - Portfolio
 #  - Uncategorized
 tags:
@@ -41,6 +42,35 @@ and this is an image
 
 ### sub title
 
+
+
 ```
 code block
 ```
+
+Two image figure
+
+<figure class="half">
+
+<img src="../assets/images/Annotation 2019-03-12 100327.png">
+<img src="../assets/images/Annotation 2019-03-12 100438.png">
+<figcaption>caption </figcaption>
+</figure>
+
+
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the
+raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
