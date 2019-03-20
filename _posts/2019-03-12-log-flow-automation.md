@@ -5,7 +5,7 @@ header:
   overlay_image: assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
   overlay_filter: 0.3
   show_overlay_excerpt: false
-  teaser: assets/images/golf.PNG
+  teaser: assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
 categories:
   - Portfolio
 tags:
@@ -22,9 +22,9 @@ Lets look at how we can automate the logging of all activity done on a theoretic
 
 ## The Scenario
 
-Our theoretical company, let's call them "Snap Inc"[^coincidence], sells luxury sunglasses that have a tendency to *break all the goddamn time*[^broke].
+Our theoretical company, let's call them "Snap Inc"[^coincidence], sells luxury sunglasses that have a tendency to break *all the time*[^broke].
 
-[^coincidence]: Any resemblance to actual companies or products is purely coincidental.
+[^coincidence]: Any resemblance to actual companies or products is purely coincidental. This is a theoretical exercise.
 [^broke]: ![20180725_215647.jpg](../assets/images/20180725_215647.jpg)
 
 Customers can complete a form on the website which will generate an email to support@spectacles<nolink>.com for help. This will generate a random ticket number as well. Tickets are assigned by the last digit of the ticket number: Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.
@@ -162,13 +162,13 @@ Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.
 
 So, let's create a lookup table to that effect. We'll add a tab to our log file, and make a table as shown below. Remember to `Format As Table` so that MS Flow can detect it.
 
-![Annotation 2019-03-13 133355](/assets/images/Annotation%202019-03-13%20133355.png)
+![Annotation 2019-03-13 133355](../assets/images/Annotation%202019-03-13%20133355.png)
 
 Then, we'll do a `Get a Row` block[^getproc] as follows:
 
 [^getproc]:You might want to rename the block to "Get Processor" at this time using the `…` button like I did for sanity's sake.
 
-![Annotation 2019-03-13 135839](/assets/images/Annotation%202019-03-13%20135839.png)
+![Annotation 2019-03-13 135839](../assets/images/Annotation%202019-03-13%20135839.png)
 
 Key Value: `substring(variables('Ticket Number'),  sub(variables('Ticket Number'),1), 1)`
 
