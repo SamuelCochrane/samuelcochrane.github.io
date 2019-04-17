@@ -93,7 +93,14 @@ If our goal is to start going to the gym more regularly, we can do a number of t
 ## Make it Invisible
 ## Make it Ugly
 ## Make it Hard
+
+A social media addict could give their phone to a coworker to store in their desk during work. The added friction of having to ask someone to retrieve your phone is often enough to make sure you only grab it for legitimate reasons.
+
 ## Make it Unsatisfying
+
+Phone addicts can switch their display to Grayscale.
+PZ screenshot of BrawlStars in color & BW.
+Which of these looks more fun?
 
 
 <small>desc.</small>
