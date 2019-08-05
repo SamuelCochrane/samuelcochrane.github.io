@@ -18,6 +18,22 @@ tags:
 
 ---
 
+
+
+
+
+
+
+> People don't care how much you know until they know how much you care
+<br>
+<small><cite>
+> Theodore Roosevelt
+</cite></small>
+
+
+You
+
+
 <small>desc.</small>
 
 <hr>
