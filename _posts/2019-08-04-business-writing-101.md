@@ -15,7 +15,7 @@ tags:
   # - PowerBI
   # - Visualization
 #toc: true
-
+published: false
 ---
 
 
@@ -31,7 +31,50 @@ tags:
 </cite></small>
 
 
+
+
 You
+
+
+
+
+# The Golden Rule: Make people feel good about themselves
+
+If you make people feel good about themselves, they will like you.
+
+The trick: miss-attribution. You don't have to directly compliment people.
+In fact, try not to, as this will make people go shields-up and think you're trying to manipulate them.
+
+### Self-Compliments
+Let people compliment themselves to get around their shields. Put them in situations where they think highly of themselves.
+
+Target: "Sorry I seem distracted, I was working til 3am last night"
+You: "Wow, it takes a dedicated person to put in hours like that."
+Target: "Well, whatever it takes right!"
+
+Notice that you didn't call *them* dedicated, you merely put forth the idea that that behavior is indicative of something, and *they* made the connection. Boom, get incepted.
+
+### Request a favor
+Asking something of someone, counterintuitively, makes them like you more.
+Why? You indirectly call them useful and/or important. This lets them complement themselves.
+
+### The Glory Enchilada
+<small>To Influence, Seek Advice</small>
+
+If you want to get someone to go along with an idea, present it for input by the target.
+Now, instead of indirectly saying "I know better than you. You've been doing it all wrong.", you're saying "I'm doing my best but you know better. Can you help me help you?"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <small>desc.</small>
