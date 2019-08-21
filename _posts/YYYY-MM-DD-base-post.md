@@ -30,7 +30,7 @@ and this is a [normal link](https://google.com)
 
 and this is an image
 ![Image Name]({{site.url}}{{site.baseurl}}/assets/images/picfix_welcome.png)
-
+![database ERD]({{site.url}}{{site.baseurl}}/assets/images/445_fullErd.PNG)
 
 > This is a quote
 <br>
@@ -47,6 +47,8 @@ and this is an image
 ```
 code block
 ```
+
+and `inline` code
 
 Two image figure
 
