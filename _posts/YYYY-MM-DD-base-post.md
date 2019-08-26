@@ -45,7 +45,8 @@ and this is an image
 
 
 ```
-code block
+□ code block
+☑ code block
 ```
 
 and `inline` code
