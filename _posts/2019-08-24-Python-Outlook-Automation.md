@@ -73,9 +73,9 @@ xl.Cells(5,3).Interior.ColorIndex = 8
 ```
 
 <figure class="third">
-<img src="../assets/images/Annotation%202019-08-29%20161840.PNG">
-<img src="../assets/images/Annotation%202019-08-29%20162113.png">
-<img src="../assets/images/Annotation%202019-08-29%20162149.png">
+<img src="../assets/images/Annotation 2019-08-29 161840.PNG">
+<img src="../assets/images/Annotation 2019-08-29 162113.png">
+<img src="../assets/images/Annotation 2019-08-29 162149.png">
 <figcaption>Scripting in action</figcaption>
 </figure>
 
@@ -96,7 +96,7 @@ ImageGrab.grabclipboard().save('paste1.png', 'PNG')
  #save that picture in the current working directory
 ```
 
-![Pasted Image]({{site.url}}{{site.baseurl}}/Annotation%202019-08-29%20164653.png)
+![Pasted Image](../assets/images/Annotation%202019-08-29%20164653.png)
 
 Nice.
 

@@ -29,6 +29,7 @@ and this is a [normal link](https://google.com)
 
 
 and this is an image
+![Annotation 2019-03-13 120030.png](../assets/images/Annotation%202019-03-13%20120030.png)
 ![Image Name]({{site.url}}{{site.baseurl}}/assets/images/picfix_welcome.png)
 ![database ERD]({{site.url}}{{site.baseurl}}/assets/images/445_fullErd.PNG)
 
