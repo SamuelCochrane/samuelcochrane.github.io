@@ -73,15 +73,13 @@ xl.Cells(5,3).Interior.ColorIndex = 8
 ```
 
 <figure class="third">
-<img src="../assets/images/Annotation 2019-08-29 161840.PNG">
-<img src="../assets/images/Annotation 2019-08-29 162113.png">
+<img src="assets/images/Annotation 2019-08-29 161840.PNG">
+<img src="assets/images/Annotation 2019-08-29 162113.png">
 <img src="../assets/images/Annotation 2019-08-29 162149.png">
 <figcaption>Scripting in action</figcaption>
 </figure>
 
 To make sure we have the most up to date numbers locally, we'll want to refresh our pivot table. Sure we could just hit the _Refresh All_ button ourselves, but clicking buttons is _so_ last year. We can use `wb.RefreshAll()` to do it for us.
-
-
 
 
 ## Saving pictures
@@ -96,7 +94,7 @@ ImageGrab.grabclipboard().save('paste1.png', 'PNG')
  #save that picture in the current working directory
 ```
 
-![Pasted Image](../assets/images/Annotation%202019-08-29%20164653.png)
+![Pasted Image](assets/images/Annotation%202019-08-29%20164653.png)
 
 Nice.
 
@@ -136,6 +134,8 @@ As for the body of the report, we will pass in HTML code using `mail.HTMLBody =`
 
 finally, we can make this mail item visible with a `mail.Display()`.
 (We could also just send it with a `mail.Send()`, but I've found people usually prefer to give the email a once-over before sending it out).
+
+C:\Users\v-samco\Documents\GitHub\samuelcochrane.github.io\assets\images\Annotation 2019-08-30 094631.png
 
 ![Generated Email]({{site.url}}{{site.baseurl}}Annotation%202019-08-30%20094631.png)
 
