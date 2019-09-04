@@ -130,13 +130,12 @@ As for the body of the report, we will pass in HTML code using `mail.HTMLBody =`
 <p>Thanks and have a great day!</p>
 '''
 ```
-<figcaption>(the three `'` are there to denote a long string, which let's us pass this whole thing as one value to `HTMLBody`.)</figcaption>
+<figcaption>(the three ''' are there to denote a long string, which let's us pass this whole thing as one value to HTMLBody.)</figcaption>
 
 finally, we can make this mail item visible with a `mail.Display()`.
 (We could also just send it with a `mail.Send()`, but I've found people usually prefer to give the email a once-over before sending it out).
 
-C:\Users\v-samco\Documents\GitHub\samuelcochrane.github.io\assets\images\Annotation 2019-08-30 094631.png
 
-![Generated Email]({{site.url}}{{site.baseurl}}Annotation%202019-08-30%20094631.png)
+![Generated Email](../../../assets/images/Annotation%202019-08-30%20094631.png)
 
 And that's it! With a script like this I've generally been able to save ~15 minutes of time per email, not to mention the reduced chances for human error. One click is now all it takes.
