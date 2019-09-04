@@ -73,7 +73,7 @@ xl.Cells(5,3).Interior.ColorIndex = 8
 ```
 
 <figure class="third">
-<img src="assets/images/Annotation 2019-08-29 161840.PNG">
+<img src="../../assets/images/Annotation 2019-08-29 161840.PNG">
 <img src="assets/images/Annotation 2019-08-29 162113.png">
 <img src="../assets/images/Annotation 2019-08-29 162149.png">
 <figcaption>Scripting in action</figcaption>
