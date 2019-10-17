@@ -59,9 +59,18 @@ Uninterrupted Concentration ||Equal Participation & Skill
 
 Isochronic Tones
 
+Pendulum Breath
+
+Difficulty of task should be 4% above your actual skill level (an overcomeable challenge)
+
+Flow follows focus
 
 
-
+Decide what you need the flow for (to accomplish what)
+Determine why the outcome is important to you (why it's important)
+Visualize being in flow (focus, 4%)
+Establish a distraction-free workzone (mute notifications, clear off desk [meez])
+Put on Focus-Music (binurial, isochronic)
 
 <hr>
 
