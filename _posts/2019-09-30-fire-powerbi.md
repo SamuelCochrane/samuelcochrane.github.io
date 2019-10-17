@@ -25,7 +25,7 @@ published: true
 This report was built using PowerBI
 
 
-<iframe width="800" height="600" src="https://msit.powerbi.com/view?r=eyJrIjoiNzliZDQ0N2QtNGQyNy00OWU0LWIzMjQtNjRmZTU5NzFiMTVkIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="1" allowFullScreen="true"></iframe>
+<iframe width="800" height="450" src="https://msit.powerbi.com/view?r=eyJrIjoiNzliZDQ0N2QtNGQyNy00OWU0LWIzMjQtNjRmZTU5NzFiMTVkIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="1" allowFullScreen="true"></iframe>
 
 <hr>
 
@@ -36,8 +36,12 @@ and this is a [normal link](https://google.com)
 
 
 and this is an image
-![Image Name]({{site.url}}{{site.baseurl}}/assets/images/picfix_welcome.png)
-![database ERD]({{site.url}}{{site.baseurl}}/assets/images/445_fullErd.PNG)
+![PBI1]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 141934.png)
+![PBI2]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 142418.png)
+![PBI3]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 142419.png)
+![PBI4]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 142420.png)
+![PBI5]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 142421.png)
+
 
 > This is a quote
 <br>
