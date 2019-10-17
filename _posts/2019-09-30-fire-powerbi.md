@@ -2,7 +2,7 @@
 title: "Seattle is Burning (PowerBI)"
 permalink: firebi #unique word that will be used as url basesite.com/[word]
 header:
-  teaser: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
+  teaser:  assets/images/images/Annotation 2019-10-17 141934.png
   #overlay_image: assets/images/[thing]
   overlay_filter: 0.3
   show_overlay_excerpt: false
