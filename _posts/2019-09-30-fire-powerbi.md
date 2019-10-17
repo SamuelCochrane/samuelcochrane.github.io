@@ -25,7 +25,7 @@ published: true
 This report was built using PowerBI
 
 
-<iframe width="1000" height="650" src="https://msit.powerbi.com/view?r=eyJrIjoiNzliZDQ0N2QtNGQyNy00OWU0LWIzMjQtNjRmZTU5NzFiMTVkIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="1" allowFullScreen="true"></iframe>
+<iframe width="900" height="550" src="https://msit.powerbi.com/view?r=eyJrIjoiNzliZDQ0N2QtNGQyNy00OWU0LWIzMjQtNjRmZTU5NzFiMTVkIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="1" allowFullScreen="true"></iframe>
 
 <hr>
 
