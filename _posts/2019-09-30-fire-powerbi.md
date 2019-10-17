@@ -14,22 +14,18 @@ categories:
 tags:
   # - PowerBI
   # - Visualization
-#toc: true
+toc: false
 published: true
 ---
 
 
-https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data
 
 
 
+This report was built using PowerBI
 
 
-
-
-
-<iframe width="800" height="600" src="https://msit.powerbi.com/reportEmbed?reportId=8823f373-ceec-4b86-9dcc-5f7f86d470ca&autoAuth=true&ctid=72f988bf-86f1-41af-91ab-2d7cd011db47&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9kZi1tc2l0LXNjdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="1" allowFullScreen="true"></iframe>
-<small>desc.</small>
+<iframe width="800" height="600" src="https://msit.powerbi.com/view?r=eyJrIjoiNzliZDQ0N2QtNGQyNy00OWU0LWIzMjQtNjRmZTU5NzFiMTVkIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="1" allowFullScreen="true"></iframe>
 
 <hr>
 
