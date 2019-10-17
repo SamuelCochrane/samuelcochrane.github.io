@@ -28,7 +28,7 @@ https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data
 
 
 
-<iframe width="1140" height="541.25" src="https://msit.powerbi.com/reportEmbed?reportId=8823f373-ceec-4b86-9dcc-5f7f86d470ca&autoAuth=true&ctid=72f988bf-86f1-41af-91ab-2d7cd011db47&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9kZi1tc2l0LXNjdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowFullScreen="true"></iframe>
+<iframe width="800" height="600" src="https://msit.powerbi.com/reportEmbed?reportId=8823f373-ceec-4b86-9dcc-5f7f86d470ca&autoAuth=true&ctid=72f988bf-86f1-41af-91ab-2d7cd011db47&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9kZi1tc2l0LXNjdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="1" allowFullScreen="true"></iframe>
 <small>desc.</small>
 
 <hr>
