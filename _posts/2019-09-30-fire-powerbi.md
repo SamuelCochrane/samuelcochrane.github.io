@@ -30,7 +30,7 @@ This report was built using PowerBI
 <hr>
 
 
-If the PowerBI is unavaiable for you, I have posted screenshots below.
+If the PowerBI is unavailable for you, I have posted screenshots below.
 
 ![PBI1]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 141934.png)
 ![PBI2]({{site.url}}{{site.baseurl}}/assets/images/Annotation 2019-10-17 142418.png)
