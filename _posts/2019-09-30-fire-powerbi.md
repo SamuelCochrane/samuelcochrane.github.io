@@ -21,10 +21,9 @@ published: true
 
 
 
-Seattle's [Open Data initiative](https://data.seattle.gov/) gives us a great opportunity to dig in and learn more about the day-to-day operations of their many departments.
+Seattle's [Open Data initiative](https://data.seattle.gov/) gives us a great opportunity to dig in and learn more about the day-to-day operations of their many departments. Let's take a live & interactive look at Seattle's Fire Department. We'll see where they go and why, and find trends in the data.
 
-Let's take a live & interactive look at Seattle's Fire Department. We'll see where they go and why, and find trends in the data.
-
+<hr>
 
 <iframe width="950" height="550" src="https://msit.powerbi.com/view?r=eyJrIjoiNzliZDQ0N2QtNGQyNy00OWU0LWIzMjQtNjRmZTU5NzFiMTVkIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="1" allowFullScreen="true"></iframe>
 
