@@ -2,7 +2,7 @@
 title: "Seattle is Burning (PowerBI)"
 permalink: firebi #unique word that will be used as url basesite.com/[word]
 header:
-  teaser: assets/images/images/Annotation 2019-10-17 141934.png
+  teaser: assets/images/Annotation 2019-10-17 141934.png
   #overlay_image: assets/images/[thing]
   overlay_filter: 0.3
   show_overlay_excerpt: false
