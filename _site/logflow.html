@@ -1,0 +1,235 @@
+<p>Love it or hate it, a lot of work is still done through email. Keeping a log of emails and responses can give a massive edge.
+Lets look at how we can automate the logging of all activity done on a theoretical support email alias.</p>
+
+<h2 id="the-scenario">The Scenario</h2>
+
+<p>Our theoretical company, let’s call them “Snap Inc”<sup id="fnref:coincidence" role="doc-noteref"><a href="#fn:coincidence" class="footnote" rel="footnote">1</a></sup>, sells luxury sunglasses that have a tendency to break <em>all the time</em><sup id="fnref:broke" role="doc-noteref"><a href="#fn:broke" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<p>Customers can complete a form on the website which will generate an email to support@spectacles<nolink>.com for help. This will generate a random ticket number as well. Tickets are assigned by the last digit of the ticket number: Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.</nolink></p>
+
+<p>All of the requestors can send email via the support alias.
+When they respond, they use templated responses and include their name for the customer. A response might look something like this.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20120058.png" alt="Annotation 2019-03-13 120058.png" /></p>
+
+<p>Since they’re sending from an alias, they respond with a Reply All thus bringing their sent response back to the inbox. This is so the other processors can check their work for auditing purposes.</p>
+
+<p>They all periodically check the inbox and when they find a ticket ending in their digits, manually create a new log line for it. When they respond to the tickets, they’ll update the Status accordingly.
+The basic log is a shared excel file, and currently looks like this.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20120030.png" alt="Annotation 2019-03-13 120030.png" /></p>
+
+<p>As you can imagine, there’s a lot of room here for human error. One of the processors could miss an email and no log line would be created for it. They could mistype a ticket number.</p>
+
+<p>Worst of all, this just kinda feels like a waste of time doesn’t it? It would be much better if the log tracked everything itself and just acted as a passive tracking solution.</p>
+
+<hr />
+
+<p>Let’s automate this log.
+All together, a functional product will need to:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>□ Create a new log row when a customer emails us.  
+	□ Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)
+        □ Add the ticket number automatically.
+  	□ Assign the ticket to the correct processor automatically.
+  	□ Add the email date/time automatically.
+
+□  Update the ticket when we respond.  
+	□ Update the Status field to Replied when an email is sent back.  
+	□ Update the Status field to Completed when we send a "ticket is completed" email.  
+</code></pre></div></div>
+
+<h2 id="initial-setup">Initial Setup</h2>
+
+<p>Let’s begin by creating a new flow set to trigger whenever an email is received by our support inbox.</p>
+
+<figure class="half">
+
+<img src="../assets/images/Annotation 2019-03-12 100327.png" />
+<img src="../assets/images/Annotation 2019-03-12 100438.png" />
+
+</figure>
+
+<p>You might notice all of our actions will boil down to either creating a new log line or updating an existing one.
+  So, first we should check if the case number in the subject line maps to an existing ticket. If it does, update a ticket. If it doesn’t, create a new one.</p>
+
+<p>First, let’s create a few new fields in our log.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20122653.png" alt="Annotation 2019-03-13 122653" /></p>
+
+<p>The TicketID field will grab the ID from the subject line, making it easier to track things.
+The MS Flow log field will track every status update made by the system.</p>
+
+<h3 id="ticket-number">Ticket Number</h3>
+
+<p>Now, let’s build the logic for the TicketID field.</p>
+
+<p>We know that the subject of every email will look something like “<code class="language-plaintext highlighter-rouge">Update to Spectacles Support Case #27307612</code>”, so this will find the character <code class="language-plaintext highlighter-rouge">#</code> and grab the 8 digit string that follows it.</p>
+
+<p>The block below will create a new variable called <code class="language-plaintext highlighter-rouge">Ticket Number</code> we can use throughout the flow.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20123357.png" alt="Annotation 2019-03-13 123357.png" />
+Value: <code class="language-plaintext highlighter-rouge">substring(triggerBody()?['Subject'], indexOf(triggerBody()?['Subject'], '#'), 8)</code></p>
+
+<h3 id="split-logic-existing-ticket">Split Logic <em>(Existing Ticket?)</em></h3>
+
+<p>Next, let’s check if we have a log line for this ticket already.
+We’ll create a <code class="language-plaintext highlighter-rouge">Get a Row</code> block using the <code class="language-plaintext highlighter-rouge">Ticket Number</code> variable as a key.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20124633.png" alt="Annotation 2019-03-13 124633" /></p>
+
+<p>In plain English this is asking our Excel table “Give me the row with this ticket number”.
+If there’s no ticket with this number yet, this will fail.</p>
+
+<p>Now we can add two parallel steps, one to create a new row, and one to update an existing row.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20124911.png" alt="Annotation 2019-03-13 124911" /></p>
+
+<p>And we’ll set the <code class="language-plaintext highlighter-rouge">Add a row</code> to only run if <code class="language-plaintext highlighter-rouge">Get a Row</code> failed.</p>
+
+<figure class="half">
+
+<img src="../assets/images/Annotation 2019-03-13 125144.png" />
+<img src="../assets/images/Annotation 2019-03-13 125208.png" />
+
+</figure>
+
+<hr />
+
+<p>Let’s see how we’re doing on that checklist of features</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>☑ Create a new log row when a customer emails us.  
+	☑ Avoid creating duplicate tickets for the same customer. (Check if a ticket already exists)
+        ☑ Add the ticket number automatically.
+  	□ Assign the ticket to the correct processor automatically.
+  	□ Add the email date/time automatically.
+
+☑  Update the ticket when we respond.  
+	□ Update the Status field to Replied when an email is sent back.  
+	□ Update the Status field to Completed when we send a "ticket is completed" email.  
+</code></pre></div></div>
+
+<p>Nice! Now that we have the logic to create and update log lines respectively, we’ll need some logic to actually figure out what to put there.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20130759.png" alt="Annotation 2019-03-13 130759" /></p>
+
+<h2 id="contextual-variables">Contextual Variables</h2>
+
+<p>Let’s give ourselves some variables to hold the dynamic content we’ll end up needing when adding or creating a row. All of these blocks should occur before our split.</p>
+
+<h3 id="time">Time</h3>
+
+<p>We can use a <code class="language-plaintext highlighter-rouge">Convert Time Zone</code> block to convert grab the time we received the email to the inbox,
+and convert it from ugly machine-readable UTC time (<code class="language-plaintext highlighter-rouge">2019-03-7T14:47:06.9459017Z</code>) to nice friendly meatbag-readable time (<code class="language-plaintext highlighter-rouge">Thu 3/7/2019 8:01 AM</code>)</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20132726.png" alt="Annotation 2019-03-13 132726" /></p>
+
+<h3 id="processor">Processor</h3>
+
+<p>We know that tickets are assigned by the last digit of the ticket number:
+Tim takes tickets ending in 0-3, Jayson in 4-6, and Wendy in 7-9.</p>
+
+<p>So, let’s create a lookup table to that effect. We’ll add a tab to our log file, and make a table as shown below. Remember to <code class="language-plaintext highlighter-rouge">Format As Table</code> so that MS Flow can detect it.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20133355.png" alt="Annotation 2019-03-13 133355" /></p>
+
+<p>Then, we’ll do a <code class="language-plaintext highlighter-rouge">Get a Row</code> block<sup id="fnref:getproc" role="doc-noteref"><a href="#fn:getproc" class="footnote" rel="footnote">3</a></sup> as follows:</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20135839.png" alt="Annotation 2019-03-13 135839" /></p>
+
+<p>Key Value: <code class="language-plaintext highlighter-rouge">substring(variables('Ticket Number'),  sub(variables('Ticket Number'),1), 1)</code></p>
+
+<p>Our expression will grab the last digit of the ticket number, and the block will use this digit to grab the corresponding row of the processor lookup table.</p>
+
+<h3 id="status">Status</h3>
+<p>This will be our most complex variable by far. We’ll need to check the content of an email to determine what type of response was sent and set it accordingly. Luckily, our team is using templated responses so we can do string matching to detect what kind of email was sent fairly easily.<br />
+Remember that when a processor responds to a ticket, they’ll do so via Reply All thus sending their response back to the support Inbox, this way the other requestors can see how they’re responding. This means our Flow will be reading both customer responses and processor responses.</p>
+
+<p>Here’s the plan. Let’s create a new variable for status, and set it using some contextual if-checks on the content of the email.</p>
+
+<p>Our first check should see if this email was sent by us or the customer.<br />
+Add a <code class="language-plaintext highlighter-rouge">Initialize variable</code> block to give us a blank <code class="language-plaintext highlighter-rouge">Status</code> variable to work with. <br />
+Add a <code class="language-plaintext highlighter-rouge">Condition</code> block set to check the email was  <code class="language-plaintext highlighter-rouge">From</code> our alias. If not, it was sent by the customer and we can set the <code class="language-plaintext highlighter-rouge">Status</code> variable to “Customer Responded”.<sup id="fnref:custresp" role="doc-noteref"><a href="#fn:custresp" class="footnote" rel="footnote">4</a></sup></p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20153528.png" alt="Annotation 2019-03-13 153528" /></p>
+
+<p>If it <strong><em>was</em></strong> sent by us, we’ll need to figure out which of our templated responses it was.</p>
+
+<p>For each of our common responses, we’ll add another <code class="language-plaintext highlighter-rouge">Condition</code> block inside of whichever <code class="language-plaintext highlighter-rouge">If</code> wasn’t used last time.
+So for instance, in the <code class="language-plaintext highlighter-rouge">If yes</code> field of the block we just outlined, we’ll add something like this.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20160358_efbowf1qk.png" alt="Annotation 2019-03-13 160358" /></p>
+
+<p>Here we check if the <code class="language-plaintext highlighter-rouge">Body</code> of the email <code class="language-plaintext highlighter-rouge">contains</code> the string we pasted here. Note that you should only paste what will be consistent across all of the responses, don’t paste in names or anything else contextual.
+If it’s a match, we’ll set the <code class="language-plaintext highlighter-rouge">Status</code> variable to the appropriate value.</p>
+
+<p>Then we’ll put our next check in the <code class="language-plaintext highlighter-rouge">If no</code> and so on.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20160945_wfc1wnmga.png" alt="Annotation 2019-03-13 160945" /></p>
+
+<p>Is it ugly nesting them like this? Absolutely, but MS Flow’s <code class="language-plaintext highlighter-rouge">Switch</code> block doesn’t let us match against <code class="language-plaintext highlighter-rouge">contains</code> values, only exact matches. So, nested <code class="language-plaintext highlighter-rouge">If</code>’s it is.</p>
+
+<h2 id="add--update-revisited">Add &amp; Update Revisited</h2>
+
+<p>Now that we have our SuperCoolDynamicVariables™️ we can go back to our Add and Update blocks and give them some functionality.</p>
+
+<h3 id="add-a-new-ticket">Add a new ticket</h3>
+
+<p>Our final <code class="language-plaintext highlighter-rouge">Add a row</code> block will look as follows.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20143929.png" alt="Annotation 2019-03-13 143929" /></p>
+
+<p>Make sure your icons/colors match what I have here, MS Flow allows multiple objects to have the same name if they’re from different contexts. Especially make sure your <code class="language-plaintext highlighter-rouge">Processor</code> variable is from our <code class="language-plaintext highlighter-rouge">Get Processor</code> block and not from our <code class="language-plaintext highlighter-rouge">Get a Row</code> block.<sup id="fnref:procblock2" role="doc-noteref"><a href="#fn:procblock2" class="footnote" rel="footnote">5</a></sup></p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20143755.png" alt="Annotation 2019-03-13 143755" /></p>
+
+<h3 id="update-an-existing-ticket">Update an existing ticket</h3>
+
+<p>Our final <code class="language-plaintext highlighter-rouge">Update a row</code> block will look as follows.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20161700_8bo1gg58s.png" alt="Annotation 2019-03-13 161700" /></p>
+
+<p>We’ll grab the row with the matching ticket number and update the status to whatever our <code class="language-plaintext highlighter-rouge">Status</code> variable ended up as.
+We’ll also update the MS Flow log field with what we changed and when.<sup id="fnref:flowlog" role="doc-noteref"><a href="#fn:flowlog" class="footnote" rel="footnote">6</a></sup>
+Leave the other fields blank as they aren’t changing.</p>
+
+<p>Congrats! Your log will now automatically update the status of tickets for you.
+As a bonus, you now have the <code class="language-plaintext highlighter-rouge">MS Flow log</code> field recording when each update to the ticket was made.</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20163233_s0bvzk7jp.png" alt="Annotation 2019-03-13 163233" /></p>
+
+<p>That gives you some nice data to work with if you ever want to audit how long one of your processors takes to respond to customers.</p>
+
+<h2 id="wrapup">Wrapup</h2>
+
+<p>Your final flow will look something like this:</p>
+
+<p><img src="../assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png" alt="Annotation 2019-03-13 162531" /></p>
+
+<p>Wowee, we did it! Give yourself a solid pat on the back for saving literally <strong><em>minutes</em></strong> of time. What’s that? That doesn’t seem like very much? But remember, this is minutes saved <strong><em>on every single ticket for the rest of time</em></strong>. That adds up to whole heck of a lot of minutes.</p>
+
+<p><img src="../assets/images/C25RYO3UoAAloyK.jpg" alt="C25RYO3UoAAloyK" /></p>
+
+<p>That’s it for today. If your brain is humming with ideas on more things we could add here to automate <em>even more things</em>, then I’ve done my job.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:coincidence" role="doc-endnote">
+      <p>Any resemblance to actual companies or products is purely coincidental. This is a theoretical exercise. <a href="#fnref:coincidence" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:broke" role="doc-endnote">
+      <p><img src="../assets/images/20180725_215647.jpg" alt="20180725_215647.jpg" /> <a href="#fnref:broke" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:getproc" role="doc-endnote">
+      <p>You might want to rename the block to “Get Processor” at this time using the <code class="language-plaintext highlighter-rouge">…</code> button like I did for sanity’s sake. <a href="#fnref:getproc" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:custresp" role="doc-endnote">
+      <p>We could technically add some logic here to read what type of response the customer sent, but that’s both a little too complex for this tutorial, and a little unnecessary. <a href="#fnref:custresp" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:procblock2" role="doc-endnote">
+      <p>I’ve done this before. Since the <code class="language-plaintext highlighter-rouge">Get a Row</code> block failed, its <code class="language-plaintext highlighter-rouge">Processor</code> variable will be empty, meaning we will be adding rows with an assigned processor of “ “. <a href="#fnref:procblock2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:flowlog" role="doc-endnote">
+      <p>Note the green variable is grabbing whatever the <code class="language-plaintext highlighter-rouge">MS Flow log</code> currently is and adding that back in before we add a new line to it. Without this we’ll only ever have the most recent status change as it keeps overwriting itself. <a href="#fnref:flowlog" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>

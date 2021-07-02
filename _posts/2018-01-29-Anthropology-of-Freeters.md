@@ -12,7 +12,7 @@ categories:
 #  - Portfolio
 #  - Uncategorized
 tags:
-  # - PowerBI
+  - Capstone
   # - Visualization
 #toc: true
 

@@ -1,0 +1,83 @@
+[
+  
+    {
+      "title"    : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2021/07/02/2019-10-25-coffee-ML.html",
+      "date"     : "2021-07-02 15:23:42 -0500"
+    } ,
+  
+    {
+      "title"    : "Seattle is Burning (PowerBI)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/firebi",
+      "date"     : "2019-09-30 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Automating Outlook and Excel with Python",
+      "category" : "",
+      "tags"     : "Python, Automation, VBA, Outlook, Excel",
+      "url"      : "/guides/portfolio/2019/08/24/Python-Outlook-Automation.html",
+      "date"     : "2019-08-24 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Predicting rain with Scikit (Machine Learning)",
+      "category" : "",
+      "tags"     : "Machine learning, SciKit, Python",
+      "url"      : "/rainML",
+      "date"     : "2019-08-13 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Automating an email log with MS Flow",
+      "category" : "",
+      "tags"     : "Automation, MS Flow, Email",
+      "url"      : "/logflow",
+      "date"     : "2019-03-12 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Ethnographic Analysis - Japanese Freeter Culture",
+      "category" : "",
+      "tags"     : "Capstone",
+      "url"      : "/freeter",
+      "date"     : "2018-01-29 00:00:00 -0600"
+    } ,
+  
+    {
+      "title"    : "PowerBI Golf",
+      "category" : "",
+      "tags"     : "PowerBI, Visualization",
+      "url"      : "/golf",
+      "date"     : "2017-08-08 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "PicFix - A modern 311 app",
+      "category" : "",
+      "tags"     : "Capstone",
+      "url"      : "/picfix",
+      "date"     : "2017-03-12 00:00:00 -0600"
+    } ,
+  
+    {
+      "title"    : "445 Consulting Database",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/portfolio/2017/03/06/445-database.html",
+      "date"     : "2017-03-06 00:00:00 -0600"
+    } ,
+  
+    {
+      "title"    : "Research Study",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/portfolio/2016/12/13/research-study.html",
+      "date"     : "2016-12-13 00:00:00 -0600"
+    } 
+  
+]

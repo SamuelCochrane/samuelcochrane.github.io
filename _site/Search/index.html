@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Search">
+  <meta property="og:description" content="I turn coffee :coffee: into code, use tabs over spaces and never broke production.">
+
+  <title>Search</title>
+  <meta name="description" content="I turn coffee :coffee: into code, use tabs over spaces and never broke production.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Sam Loves Coffee 👱❤☕</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+<a class="nav-item nav-link " href="/search/tags">Tags</a>
+
+      <a class="nav-item nav-link " href="/404.html"></a>
+
+      <a class="nav-item nav-link " href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link active" href="/">Sam Loves Coffee</a>
+
+      <a class="nav-item nav-link active" href="/Search/">Search</a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link " href="https://google.com/">fab fa-1x fa-github</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
+
+<div class="input-group mt-5 px-3">
+  <input id="search-input" type="text" class="form-control search-box" placeholder="Search posts..">
+  <div class="input-group-append">
+    <span class="input-group-text border border-primary bg-primary text-white">
+      <i class="fas fa-search"></i>
+    </span>
+  </div>
+  <button class="btn btn-outline-primary ml-1" onclick="location.href = '/search/tags/';">
+    <i class="fas fa-tags"></i>
+  </button>
+</div>
+<ul class="px-3" id="results-container"></ul>
+
+<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+<script>
+  var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        searchResultTemplate: '<a href="{url}" class="list-group-item list-group-item-action">{title}</a>',
+        noResultsText: '<li class="list-group-item list-group-item-action disabled">No results found</li>',
+        json: '/search.json/'
+      })
+</script>
+<div class="card-group mt-2">
+
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/2021/07/02/2019-10-25-coffee-ML.html" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title"></h3>
+      <p class="card-text">
+        
+      </p>
+      <p class="card-text"></p>
+<p>Question: Given the aroma/bitterness/etc of a cup of coffee, can we predict if it will be a ‘good’ cup of coffee as rated by professional<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      02 July 2021
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/firebi" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Seattle is Burning (PowerBI)</h3>
+      <p class="card-text">
+        
+      </p>
+      <p class="card-text"></p>
+<p>Seattle’s <a href="https://data.seattle.gov/">Open Data initiative</a> gives us a great opportunity to dig in and learn more about the day-to-day operations of their many departments. Let’s<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      30 September 2019
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/guides/portfolio/2019/08/24/Python-Outlook-Automation.html" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Automating Outlook and Excel with Python</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">Python</span>
+        
+        <span class="badge badge-dark">Automation</span>
+        
+        <span class="badge badge-dark">VBA</span>
+        
+        <span class="badge badge-dark">Outlook</span>
+        
+        <span class="badge badge-dark">Excel</span>
+        
+      </p>
+      <p class="card-text"></p>
+<p>One common task I’ve seen as part of an analysts responsibilities is to send out a daily status email about the sales numbers, fiscal projections,<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      24 August 2019
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/rainML" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Predicting rain with Scikit (Machine Learning)</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">Machine learning</span>
+        
+        <span class="badge badge-dark">SciKit</span>
+        
+        <span class="badge badge-dark">Python</span>
+        
+      </p>
+      <p class="card-text"></p>
+<p>In the olden days of yore, predicting the weather was near-impossible task reserved to fortunetellers and shamanistic figures. People would spend their lives, rather unfruitfully,<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      13 August 2019
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/logflow" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Automating an email log with MS Flow</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">Automation</span>
+        
+        <span class="badge badge-dark">MS Flow</span>
+        
+        <span class="badge badge-dark">Email</span>
+        
+      </p>
+      <p class="card-text"></p>
+<p>Love it or hate it, a lot of work is still done through email. Keeping a log of emails and responses can give a massive<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      12 March 2019
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/freeter" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Ethnographic Analysis - Japanese Freeter Culture</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">Capstone</span>
+        
+      </p>
+      <p class="card-text"></p>
+<p>Freeter (フリーター furītā) is a Japanese term for young individuals (18-35) who pursue only temp jobs, part-time jobs, or are jobless, and describes a unique<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      29 January 2018
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/golf" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">PowerBI Golf</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">PowerBI</span>
+        
+        <span class="badge badge-dark">Visualization</span>
+        
+      </p>
+      <p class="card-text"></p>
+<p><small>Designed &amp; built an interactive dashboard for a golf tourney. Allows golfers to see their stats &amp; compare against the other golfers.<br>Built using PowerBI<small><i>  read more...</i></small></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      08 August 2017
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/picfix" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">PicFix - A modern 311 app</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">Capstone</span>
+        
+      </p>
+      <p class="card-text"></p>
+<p><small>An app to modernize the 311 service request system. Informatics Capstone Project. </small></p> <hr> <p><img src="https://samuelcochrane.github.io/assets/images/picfix_welcome.png" alt="Welcome Page"></p> <p>The 311 Service Request system<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      12 March 2017
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/portfolio/2017/03/06/445-database.html" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">445 Consulting Database</h3>
+      <p class="card-text">
+        
+      </p>
+      <p class="card-text"></p>
+<p><small> Fully functional relational database design for a fictional consulting company. Includes multiple stored procedures, business rules, views, and calculated columns. Built using SQL Server.</small></p>
+<small><i>  read more...</i></small>
+    </div>
+    <div class="card-footer text-themed">
+      06 March 2017
+    </div>
+  </a>
+</div>
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/portfolio/2016/12/13/research-study.html" class="post card border border-">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Research Study</h3>
+      <p class="card-text">
+        
+      </p>
+      <p class="card-text"></p>
+<h1 id="perceived-credibility-of-print-vs-digital-news">Perceived Credibility of Print vs Digital News</h1> <p><small>Designed &amp; executed a small study to determine the trustworthiness bias of print &amp; digital media, wrote<small><i>  read more...</i></small></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      13 December 2016
+    </div>
+  </a>
+</div>
+  
+  
+</div>
+  </main>
+
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Samuel DC</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center">
+
+</div>
+<small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>
