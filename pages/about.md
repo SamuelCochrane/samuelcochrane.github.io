@@ -18,10 +18,10 @@ Always seeking an opportunity to make things better. Let's connect. :smile:
 
 
 <div class="row">
-{% include about/skills.html title="Front-End Skills" source=site.data.programming-skills %}
-{% include about/skills.html title="Back-End Skills" source=site.data.other-skills %}
+{% include about/skills.html title="Front-End Skills" source=site.data.front-end-skills %}
+{% include about/skills.html title="Back-End Skills" source=site.data.back-end-skills %}
 </div>
 
-<div class="row">
+<!-- <div class="row">
 {% include about/timeline.html %}
-</div>
+</div> -->

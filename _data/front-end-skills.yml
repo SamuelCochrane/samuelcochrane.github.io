@@ -1,0 +1,9 @@
+- name: PowerBI
+  percentage: 95
+  color: success
+- name: PowerApps
+  percentage: 88
+  color: danger
+- name: PowerAutomate
+  percentage: 76
+  color: warning
