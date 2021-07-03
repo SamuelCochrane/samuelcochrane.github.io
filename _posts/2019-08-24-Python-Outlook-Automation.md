@@ -1,8 +1,10 @@
 ---
 title: "Automating Outlook and Excel with Python"
 #permalink: PythonOutlookAutomation #unique word that will be used as url basesite.com/[word]
+style: border #fill, border
+color: info #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 header:
-  teaser: assets/images/Annotation 2019-08-29 162113.png
+  teaser: /assets/images/Annotation 2019-08-29 162113.png
   #overlay_image: assets/images/[thing]
   overlay_filter: 0.3
   show_overlay_excerpt: false
@@ -73,9 +75,9 @@ xl.Cells(5,3).Interior.ColorIndex = 8
 ```
 
 <figure class="third">
-<img src="../../../assets/images/Annotation 2019-08-29 161840.png">
-<img src="../../../assets/images/Annotation 2019-08-29 162113.png">
-<img src="../../../assets/images/Annotation 2019-08-29 162149.png">
+<img src="/assets/images/Annotation 2019-08-29 161840.png">
+<img src="/assets/images/Annotation 2019-08-29 162113.png">
+<img src="/assets/images/Annotation 2019-08-29 162149.png">
 <figcaption>Scripting in action</figcaption>
 </figure>
 
@@ -94,7 +96,7 @@ ImageGrab.grabclipboard().save('paste1.png', 'PNG')
  #save that picture in the current working directory
 ```
 
-![Pasted Image](../../../assets/images/Annotation%202019-08-29%20164653.png)
+![Pasted Image](/assets/images/Annotation%202019-08-29%20164653.png)
 
 Nice.
 
@@ -136,6 +138,6 @@ finally, we can make this mail item visible with a `mail.Display()`.
 (We could also just send it with a `mail.Send()`, but I've found people usually prefer to give the email a once-over before sending it out).
 
 
-![Generated Email](../../../assets/images/Annotation%202019-08-30%20094631.png)
+![Generated Email](/assets/images/Annotation%202019-08-30%20094631.png)
 
 And that's it! With a script like this I've generally been able to save ~15 minutes of time per email, not to mention the reduced chances for human error. One click is now all it takes.

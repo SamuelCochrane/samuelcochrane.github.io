@@ -1,8 +1,11 @@
 ---
 title: Research Study
+description: Examining the Perceived Credibility of Print vs Digital News. Designed & executed a small study to determine the trustworthiness bias of print & digital media, wrote a whitepaper detailing our findings.
 toc: false
+style: fill #fill, border
+color: light #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 header:
-  teaser: assets/images/newsStudy1.PNG
+  teaser: /assets/images/newsStudy1.PNG
 categories:
   - Portfolio
 tags: null

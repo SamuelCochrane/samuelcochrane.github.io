@@ -12,11 +12,11 @@ plugins:
 
 ### Site Settings ###
 locale                   : "en-US"
-title                    : Sam Loves Coffee 👱❤☕
+title                    : "Sam Loves Coffee 👱‍♂️🤍☕"
 description         : >-
-                      I turn coffee :coffee: into code,
-                      use tabs over spaces
-                      and never broke production.
+                      I turn data into information,
+                      make that information actionable,
+                      and make those actions the right ones.
 url                      : https://samuelcochrane.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 imgurl                   : https://samuelcochrane.github.io/assets/images
@@ -26,6 +26,11 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 
+nav_exclude:
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.html
+  - pages/projects.html
 
 
 
@@ -72,12 +77,9 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "projects"
+      type: "posts"
     values:
       layout: "page"
-  - scope:
-      path: ""
-      type: "posts"
 # Reading Files
 include:
   - .htaccess

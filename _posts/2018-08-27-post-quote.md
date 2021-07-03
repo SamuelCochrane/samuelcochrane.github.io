@@ -1,6 +1,8 @@
 ---
 title: Quotes I like
 permalink: quotes
+style: border #fill, border
+color: success #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 toc: false
 share: false
 author: false

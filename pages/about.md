@@ -7,12 +7,19 @@ weight: 3
 
 # **About Me**
 
-Hi I am **{{ site.author.name }}** :wave:,<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Hi, I'm **{{ site.author.name }}** :wave:,<br>
+I'm an intelligence developer. Whether that's ETL'ing the data itself it make it useable, or working directly with the client to design a beautiful and functional window into their business - I'm there.
+
+Right now, I'm working on:
+- Building new & outstanding PowerBI/PowerApps work for my stakeholders within a Fortune-5 company. :bar_chart:
+- Refining my latest Android app: a quantified-self project for tracking your energy levels. :iphone:
+
+Always seeking an opportunity to make things better. Let's connect. :smile:
+
 
 <div class="row">
-{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
-{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
+{% include about/skills.html title="Front-End Skills" source=site.data.programming-skills %}
+{% include about/skills.html title="Back-End Skills" source=site.data.other-skills %}
 </div>
 
 <div class="row">

@@ -1,4 +1,77 @@
-<p>One common task I’ve seen as part of an analysts responsibilities is to send out a daily status email about the sales numbers, fiscal projections, etc.</p>
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Automating Outlook and Excel with Python">
+  <meta property="og:description" content="I turn data into information, make that information actionable, and make those actions the right ones.">
+
+  <title>Automating Outlook and Excel with Python</title>
+  <meta name="description" content="I turn data into information, make that information actionable, and make those actions the right ones.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Sam Loves Coffee 👱‍♂️🤍☕</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/Search/">Search</a>
+
+      <a class="nav-item nav-link " href="https://www.linkedin.com/in/sam-cochrane-aaa325110/">LinkedIn</a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <p>One common task I’ve seen as part of an analysts responsibilities is to send out a daily status email about the sales numbers, fiscal projections, etc.</p>
 
 <p>Many execs find these emails useful as a quick way to stay up to date on the financial numbers of a company.
 That said, sending an email on a daily cadence is a task primed for automation, let’s see how to do it.</p>
@@ -42,9 +115,9 @@ xl.Cells(5,3).Interior.ColorIndex = 8
 </code></pre></div></div>
 
 <figure class="third">
-<img src="../../../assets/images/Annotation 2019-08-29 161840.png" />
-<img src="../../../assets/images/Annotation 2019-08-29 162113.png" />
-<img src="../../../assets/images/Annotation 2019-08-29 162149.png" />
+<img src="/assets/images/Annotation 2019-08-29 161840.png" />
+<img src="/assets/images/Annotation 2019-08-29 162113.png" />
+<img src="/assets/images/Annotation 2019-08-29 162149.png" />
 <figcaption>Scripting in action</figcaption>
 </figure>
 
@@ -61,7 +134,7 @@ ImageGrab.grabclipboard().save('paste1.png', 'PNG')
  #save that picture in the current working directory
 </code></pre></div></div>
 
-<p><img src="../../../assets/images/Annotation%202019-08-29%20164653.png" alt="Pasted Image" /></p>
+<p><img src="/assets/images/Annotation%202019-08-29%20164653.png" alt="Pasted Image" /></p>
 
 <p>Nice.</p>
 
@@ -100,7 +173,7 @@ mail.Subject = 'Finance Status Report '+datetime.today().strftime('%m/%d')
 <p>finally, we can make this mail item visible with a <code class="language-plaintext highlighter-rouge">mail.Display()</code>.
 (We could also just send it with a <code class="language-plaintext highlighter-rouge">mail.Send()</code>, but I’ve found people usually prefer to give the email a once-over before sending it out).</p>
 
-<p><img src="../../../assets/images/Annotation%202019-08-30%20094631.png" alt="Generated Email" /></p>
+<p><img src="/assets/images/Annotation%202019-08-30%20094631.png" alt="Generated Email" /></p>
 
 <p>And that’s it! With a script like this I’ve generally been able to save ~15 minutes of time per email, not to mention the reduced chances for human error. One click is now all it takes.</p>
 <div class="footnotes" role="doc-endnotes">
@@ -110,3 +183,51 @@ mail.Subject = 'Finance Status Report '+datetime.today().strftime('%m/%d')
     </li>
   </ol>
 </div>
+
+</div>
+  </main>
+
+  <footer class="mt-auto py-3 text-center"><small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Samuel DC </strong> using <a style="color: #343a40;" href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+
+  <div class="container-fluid justify-content-center">
+
+</div>
+
+
+  <!-- <small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small> -->
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>

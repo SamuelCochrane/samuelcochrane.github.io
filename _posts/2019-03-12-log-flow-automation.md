@@ -1,11 +1,13 @@
 ---
 title: Automating an email log with MS Flow
 permalink: logflow
+style: fill #fill, border
+color: primary #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 header:
   overlay_image: assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
   overlay_filter: 0.3
   show_overlay_excerpt: false
-  teaser: assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
+  teaser: /assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
 categories:
   - Portfolio
 tags:

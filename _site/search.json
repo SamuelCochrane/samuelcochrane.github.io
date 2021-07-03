@@ -1,17 +1,17 @@
 [
   
     {
-      "title"    : "",
+      "title"    : "Does this coffee taste like crap? An Algorithmic approach. (ML)",
       "category" : "",
-      "tags"     : "",
-      "url"      : "/2021/07/02/2019-10-25-coffee-ML.html",
-      "date"     : "2021-07-02 15:23:42 -0500"
+      "tags"     : "Machine learning, SciKit, Python, Deep learning, Jupyter",
+      "url"      : "/coffeeML",
+      "date"     : "2019-10-25 00:00:00 -0500"
     } ,
   
     {
       "title"    : "Seattle is Burning (PowerBI)",
       "category" : "",
-      "tags"     : "",
+      "tags"     : "PowerBI, Visualization",
       "url"      : "/firebi",
       "date"     : "2019-09-30 00:00:00 -0500"
     } ,
@@ -46,14 +46,6 @@
       "tags"     : "Capstone",
       "url"      : "/freeter",
       "date"     : "2018-01-29 00:00:00 -0600"
-    } ,
-  
-    {
-      "title"    : "PowerBI Golf",
-      "category" : "",
-      "tags"     : "PowerBI, Visualization",
-      "url"      : "/golf",
-      "date"     : "2017-08-08 00:00:00 -0500"
     } ,
   
     {

@@ -1,8 +1,11 @@
 ---
 title: "Seattle is Burning (PowerBI)"
+description: A PowerBI visualization built on Seattle's Open Data Initiative. Looking at real-time fire department data. 🔥
 permalink: firebi #unique word that will be used as url basesite.com/[word]
+style: fill #fill, border
+color: danger #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 header:
-  teaser: assets/images/Annotation 2019-10-17 141934.png
+  teaser: /assets/images/Annotation 2019-10-17 141934.png
   #overlay_image: assets/images/[thing]
   overlay_filter: 0.3
   show_overlay_excerpt: false
@@ -12,8 +15,8 @@ categories:
 #  - Portfolio
 #  - Uncategorized
 tags:
-  # - PowerBI
-  # - Visualization
+  - PowerBI
+  - Visualization
 toc: false
 published: true
 ---

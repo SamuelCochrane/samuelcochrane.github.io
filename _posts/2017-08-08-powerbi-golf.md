@@ -1,17 +1,19 @@
 ---
 title: PowerBI Golf
 permalink: golf
+style: border #fill, border
+color: danger #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 header:
   overlay_image: assets/images/golf.PNG
   overlay_filter: 0.3
   show_overlay_excerpt: false
-  teaser: assets/images/golf.PNG
+  teaser: /assets/images/golf.PNG
 categories:
   - Portfolio
 tags:
   - PowerBI
   - Visualization
-published: true
+published: false
 ---
 
 <small>Designed & built an interactive dashboard for a golf tourney. Allows golfers to see their stats & compare against the other golfers.<br>Built using PowerBI for the MSIT Give Golf Tournament.</small>

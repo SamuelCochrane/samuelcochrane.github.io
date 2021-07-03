@@ -1,4 +1,4 @@
-I"#<p>One common task I’ve seen as part of an analysts responsibilities is to send out a daily status email about the sales numbers, fiscal projections, etc.</p>
+I"<p>One common task I’ve seen as part of an analysts responsibilities is to send out a daily status email about the sales numbers, fiscal projections, etc.</p>
 
 <p>Many execs find these emails useful as a quick way to stay up to date on the financial numbers of a company.
 That said, sending an email on a daily cadence is a task primed for automation, let’s see how to do it.</p>
@@ -42,9 +42,9 @@ xl.Cells(5,3).Interior.ColorIndex = 8
 </code></pre></div></div>
 
 <figure class="third">
-<img src="../../../assets/images/Annotation 2019-08-29 161840.png" />
-<img src="../../../assets/images/Annotation 2019-08-29 162113.png" />
-<img src="../../../assets/images/Annotation 2019-08-29 162149.png" />
+<img src="/assets/images/Annotation 2019-08-29 161840.png" />
+<img src="/assets/images/Annotation 2019-08-29 162113.png" />
+<img src="/assets/images/Annotation 2019-08-29 162149.png" />
 <figcaption>Scripting in action</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ ImageGrab.grabclipboard().save('paste1.png', 'PNG')
  #save that picture in the current working directory
 </code></pre></div></div>
 
-<p><img src="../../../assets/images/Annotation%202019-08-29%20164653.png" alt="Pasted Image" /></p>
+<p><img src="/assets/images/Annotation%202019-08-29%20164653.png" alt="Pasted Image" /></p>
 
 <p>Nice.</p>
 
