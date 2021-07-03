@@ -17,7 +17,7 @@
     <div class="progress-bar bg-{{ skill.color | default: "primary" }} wow animated slideInLeft"
       data-wow-delay="{{ forloop.index | divided_by: 20.0 }}"
       role="progressbar"
-      style="width: '{{skill.percentage}}'"
+      style="width: {{ skill.percentage }}%;"
       aria-valuenow="{{ skill.percentage }}"
       aria-valuemin="0"
       aria-valuemax="100">

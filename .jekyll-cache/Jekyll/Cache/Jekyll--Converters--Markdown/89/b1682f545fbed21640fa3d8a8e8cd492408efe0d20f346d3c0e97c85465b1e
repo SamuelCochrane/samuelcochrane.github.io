@@ -1,6 +1,6 @@
-I"�<h1 id="about-me"><strong>About Me</strong></h1>
+I"�<h1 id="about-me"><strong>About Me</strong></h1>
 
-<p>Hi, I’m <strong>Samuel DC</strong> :wave:,<br />
+<p>Hi, I’m <strong>Samuel Cochrane</strong> :wave:,<br />
 I’m an intelligence developer. Whether that’s ETL’ing the data itself it make it useable, or working directly with the client to design a beautiful and functional window into their business - I’m there.</p>
 
 <p>Right now, I’m working on:</p>
@@ -28,7 +28,7 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
   </div>
 
   <div class="progress mb-4 bg-themed" style="height: 8px;">
-    <div class="progress-bar bg-success wow animated slideInLeft" data-wow-delay="0.05" role="progressbar" style="width: '95'" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-success wow animated slideInLeft" data-wow-delay="0.05" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 
@@ -44,7 +44,7 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
   </div>
 
   <div class="progress mb-4 bg-themed" style="height: 8px;">
-    <div class="progress-bar bg-danger wow animated slideInLeft" data-wow-delay="0.1" role="progressbar" style="width: '88'" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-danger wow animated slideInLeft" data-wow-delay="0.1" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 
@@ -60,7 +60,7 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
   </div>
 
   <div class="progress mb-4 bg-themed" style="height: 8px;">
-    <div class="progress-bar bg-warning wow animated slideInLeft" data-wow-delay="0.15" role="progressbar" style="width: '76'" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-warning wow animated slideInLeft" data-wow-delay="0.15" role="progressbar" style="width: 76%;" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 
@@ -83,7 +83,7 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
   </div>
 
   <div class="progress mb-4 bg-themed" style="height: 8px;">
-    <div class="progress-bar bg-dark wow animated slideInLeft" data-wow-delay="0.05" role="progressbar" style="width: '75'" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-dark wow animated slideInLeft" data-wow-delay="0.05" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 
@@ -99,7 +99,7 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
   </div>
 
   <div class="progress mb-4 bg-themed" style="height: 8px;">
-    <div class="progress-bar bg-info wow animated slideInLeft" data-wow-delay="0.1" role="progressbar" style="width: '70'" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-info wow animated slideInLeft" data-wow-delay="0.1" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 
@@ -115,7 +115,7 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
   </div>
 
   <div class="progress mb-4 bg-themed" style="height: 8px;">
-    <div class="progress-bar bg-light wow animated slideInLeft" data-wow-delay="0.15" role="progressbar" style="width: '80'" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-secondary wow animated slideInLeft" data-wow-delay="0.15" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 
@@ -124,11 +124,11 @@ I’m an intelligence developer. Whether that’s ETL’ing the data itself it m
 </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
 <div class="col mt-4">
   <div class="timeline-body bg-themed">
     
   </div>
 </div>
-</div>
+</div> -->
 :ET

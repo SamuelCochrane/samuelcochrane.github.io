@@ -1,9 +1,9 @@
 - name: SQL
   percentage: 75
-  color: dark
+  color: dark #secondary / success / danger / warning / info / light / dark (choose one only, default is primary)
 - name: Python (incl. Scikit-learn & pandas)
   percentage: 70
   color: info
 - name: C#
   percentage: 80
-  color: light
+  color: secondary
