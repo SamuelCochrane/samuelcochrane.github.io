@@ -1,20 +1,23 @@
 ---
-title: ""
-permalink: word #unique word that will be used as url basesite.com/[word]
+title: Research Study
+description: Examining the Perceived Credibility of Print vs Digital News. Designed & executed a small study to determine the trustworthiness bias of print & digital media, wrote a whitepaper detailing our findings.
+# toc: false
+permalink: temp
+style: fill #fill, border
+color: light #primary / secondary / success / danger / warning / info / light / dark (choose one only)
 header:
-  teaser: https://farm5.staticflickr.com/4140/4939863887_84705982fd_b.jpg
-  #overlay_image: assets/images/[thing]
-  overlay_filter: 0.3
-  show_overlay_excerpt: false
+  teaser: /assets/images/newsStudy1.PNG
 categories:
-#  - Guides#  - Guides
-
-#  - Portfolio
-#  - Uncategorized
-tags:
+  - Portfolio
+tags: 
   # - PowerBI
-  # - Visualization
-#toc: true
+  #  - Machine learning
+  #  - SciKit
+  #  - Python
+  #  - Deep learning
+  #  - Jupyter
+  - 
+published: false
 
 ---
 
