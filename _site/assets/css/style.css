@@ -119,7 +119,7 @@ body { font-family: "Be Vietnam", sans-serif; }
 
 .post .post-metadata { font-size: 14px; margin-top: -6px; }
 
-.post .tag:hover { background-color: #da9631; color: white !important; }
+.post .tag:hover { background-color: #1f8999; color: white !important; }
 
 .post footer { font-size: 10px; color: #6c757d; text-decoration: underline; text-decoration-color: yellow; text-align: right; margin-top: 4em; margin-right: 2em; }
 
@@ -135,9 +135,9 @@ body { font-family: "Be Vietnam", sans-serif; }
 
 .post a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline) { display: inline-block; text-decoration: none; }
 
-.post a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline):hover { color: #da9631; }
+.post a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline):hover { color: #1f8999; }
 
-.post a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline)::after { content: ""; display: block; height: 0.15em; margin-top: -0.15em; width: 0; background: #da9631; transition: width 0.35s; }
+.post a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline)::after { content: ""; display: block; height: 0.15em; margin-top: -0.15em; width: 0; background: #1f8999; transition: width 0.35s; }
 
 .post a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline):hover::after { width: 100%; }
 
@@ -145,13 +145,13 @@ body { font-family: "Be Vietnam", sans-serif; }
 
 .post code.highlighter-rouge { background-color: #f8f9fa; color: #343a40; border-radius: 3px; margin: 0; padding: 0.2em 0.65em; }
 
-.post blockquote { border-left: 0.25em solid #da9631; color: #6c757d; padding: 0 1em; }
+.post blockquote { border-left: 0.25em solid #1f8999; color: #6c757d; padding: 0 1em; }
 
 .post table:not(.highlight) { display: block; overflow-x: auto; margin: 1rem 0; }
 
 .post table:not(.highlight) td, .post table:not(.highlight) th { border: 1px solid #ddd; padding: 8px 16px; }
 
-.post table:not(.highlight) th { padding-top: 12px; padding-bottom: 12px; font-weight: 500; text-align: left; background-color: #da9631; color: white; }
+.post table:not(.highlight) th { padding-top: 12px; padding-bottom: 12px; font-weight: 500; text-align: left; background-color: #1f8999; color: white; }
 
 .post table:not(.highlight) tr:nth-child(even) { background-color: rgba(0, 0, 0, 0.05); }
 
@@ -171,7 +171,7 @@ body { font-family: "Be Vietnam", sans-serif; }
 
 .circle-image { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center; }
 
-.link-after, .nav-item.active::after, .nav-link::after, .navbar-brand::after { content: ""; display: block; height: 0.15em; background: #da9631; }
+.link-after, .nav-item.active::after, .nav-link::after, .navbar-brand::after { content: ""; display: block; height: 0.15em; background: #1f8999; }
 
 .nav-link::after, .navbar-brand::after { width: 0; transition: width 0.35s; }
 
@@ -193,11 +193,11 @@ body { font-family: "Be Vietnam", sans-serif; }
 
 .timeline-body { position: relative; border-radius: 0 10px 10px 0; padding: 5px 0; }
 
-.timeline-body:after { content: ""; width: 4px; height: 100%; background-color: #da9631; position: absolute; left: -4px; top: 0; }
+.timeline-body:after { content: ""; width: 4px; height: 100%; background-color: #1f8999; position: absolute; left: -4px; top: 0; }
 
 .timeline-body .timeline-item { position: relative; }
 
-.timeline-body .timeline-item:after { content: ""; width: 20px; height: 20px; border-radius: 50%; border: 4px solid #da9631; background-color: #f8f9fa; position: absolute; left: -12px; top: 8px; z-index: 10; }
+.timeline-body .timeline-item:after { content: ""; width: 20px; height: 20px; border-radius: 50%; border: 4px solid #1f8999; background-color: #f8f9fa; position: absolute; left: -12px; top: 8px; z-index: 10; }
 
 .timeline-body .timeline-item .content { margin: 40px; padding-bottom: 20px; border-bottom: 1px dashed #343a40; }
 
