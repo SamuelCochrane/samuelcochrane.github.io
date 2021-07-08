@@ -25,3 +25,10 @@ Always seeking an opportunity to make things better. Let's connect. :smile:
 <!-- <div class="row">
 {% include about/timeline.html %}
 </div> -->
+## **Resume**
+<div>
+<div style="position:relative;padding-top:56.25%;">
+<iframe src="https://drive.google.com/file/d/12sBPRa8RvH5Efc3tuWS5jOVCwZ3npCjc/preview" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+</div>
+</div>
