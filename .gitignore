@@ -1,0 +1,8 @@
+
+
+.jekyll-cache/**/
+.jekyll-cache/
+._site/
+._site/*
+._site/**/
+.jekyll-cache/Jekyll/Cache/Jekyll--Cache/

@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Adding Togglable Windows To PowerBI (Hack)",
+      "category" : "",
+      "tags"     : "PowerBI",
+      "url"      : "/portfolio/2021/07/03/popup-windows-in-powerbi.html",
+      "date"     : "2021-07-03 00:00:00 -0500"
+    } ,
+  
+    {
       "title"    : "Does this coffee taste like crap? An Algorithmic approach. (ML)",
       "category" : "",
       "tags"     : "Machine learning, SciKit, Python, Deep learning, Jupyter",
@@ -59,8 +67,8 @@
     {
       "title"    : "445 Consulting Database",
       "category" : "",
-      "tags"     : "",
-      "url"      : "/portfolio/2017/03/06/445-database.html",
+      "tags"     : "SQL",
+      "url"      : "/relationaldb",
       "date"     : "2017-03-06 00:00:00 -0600"
     } ,
   
