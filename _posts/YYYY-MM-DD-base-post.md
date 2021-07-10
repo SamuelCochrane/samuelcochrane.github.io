@@ -5,8 +5,7 @@ description: Examining the Perceived Credibility of Print vs Digital News. Desig
 permalink: temp
 style: fill #fill, border
 color: light #primary / secondary / success / danger / warning / info / light / dark (choose one only)
-header:
-  teaser: /assets/images/newsStudy1.PNG
+image: /assets/images/newsStudy1.PNG
 categories:
   - Portfolio
 tags: 

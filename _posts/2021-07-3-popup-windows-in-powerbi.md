@@ -3,8 +3,7 @@ title: How to build a toggle-able window in PowerBI (even though that's not a fe
 # toc: false
 style: border #fill, border
 color: info #primary / secondary / success / danger / warning / info / light / dark (choose one only)
-header:
-  teaser: https://remnote-user-data.s3.amazonaws.com/x4aWaP4M69AxYfnmxF0EqJvbd2S-ZLwct9l6DkN5x-QO5pwQW3LhUbLsXO7b5WVtrB4Z4G2nnMp03JW1HzwqFFiwZMp7DT1nP8HQrMcSpWohVhjSTzO3E3De7ulKOubv.gif
+image: https://remnote-user-data.s3.amazonaws.com/x4aWaP4M69AxYfnmxF0EqJvbd2S-ZLwct9l6DkN5x-QO5pwQW3LhUbLsXO7b5WVtrB4Z4G2nnMp03JW1HzwqFFiwZMp7DT1nP8HQrMcSpWohVhjSTzO3E3De7ulKOubv.gif
 categories:
   - Portfolio
 tags: 

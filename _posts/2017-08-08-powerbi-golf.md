@@ -3,11 +3,7 @@ title: PowerBI Golf
 permalink: golf
 style: border #fill, border
 color: danger #primary / secondary / success / danger / warning / info / light / dark (choose one only)
-header:
-  overlay_image: assets/images/golf.PNG
-  overlay_filter: 0.3
-  show_overlay_excerpt: false
-  teaser: /assets/images/golf.PNG
+image: /assets/images/golf.PNG
 categories:
   - Portfolio
 tags:

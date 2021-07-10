@@ -4,11 +4,8 @@ permalink: freeter #unique word that will be used as url basesite.com/[word]
 
 style: fill #fill, border
 color: light #primary / secondary / success / danger / warning / info / light / dark (choose one only)
-header:
-  teaser: https://cdn.cnn.com/cnnnext/dam/assets/140404174620-japan-travel-tips-conbini-horizontal-large-gallery.jpg
-  #overlay_image: assets/images/[thing]
-  overlay_filter: 0.3
-  show_overlay_excerpt: false
+image: https://cdn.cnn.com/cnnnext/dam/assets/140404174620-japan-travel-tips-conbini-horizontal-large-gallery.jpg
+
 categories:
 #  - Guides#  - Guides
 

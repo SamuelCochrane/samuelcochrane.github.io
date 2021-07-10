@@ -3,11 +3,7 @@ title: "Automating Outlook and Excel with Python"
 #permalink: PythonOutlookAutomation #unique word that will be used as url basesite.com/[word]
 style: border #fill, border
 color: info #primary / secondary / success / danger / warning / info / light / dark (choose one only)
-header:
-  teaser: /assets/images/Annotation 2019-08-29 162113.png
-  #overlay_image: assets/images/[thing]
-  overlay_filter: 0.3
-  show_overlay_excerpt: false
+image: /assets/images/Annotation 2019-08-29 162113.png
 categories:
   - Guides
   #  - Guides
