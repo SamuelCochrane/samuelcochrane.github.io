@@ -1,0 +1,16 @@
+name: FastPages
+
+on:
+  push:
+    branches: [ master ]
+    paths: 
+      - '_notebooks/**'
+      - '_word/**'
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: convert notebooks and word docs to posts
+      uses: fastai/fastpages@master
