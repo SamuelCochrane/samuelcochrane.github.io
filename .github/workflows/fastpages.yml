@@ -16,5 +16,5 @@ jobs:
       uses: fastai/fastpages@master
       with:
         BOOL_SAVE_MARKDOWN: true
-        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        deploy_key: ${{ secrets.SSH_DEPLOY_KEY }}
 
