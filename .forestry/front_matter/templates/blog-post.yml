@@ -8,15 +8,32 @@ fields:
 - type: textarea
   name: description
   label: description
+- name: color
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - primary
+    - secondary
+    - success
+    - danger
+    - warning
+    - info
+    - light
+    - dark
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: color
 - type: text
   name: permalink
   label: permalink
 - type: text
   name: style
   label: style
-- type: text
-  name: color
-  label: color
 - type: file
   name: image
   label: image
