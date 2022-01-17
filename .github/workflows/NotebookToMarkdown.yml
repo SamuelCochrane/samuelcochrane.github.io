@@ -10,10 +10,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: nbconvert .ipynb
-        uses: runsascoded/nbconvert@v1.2
+      - name: convert notebooks and word docs to posts
+        uses: fastai/fastpages@master
         with:
-          args: -t ${{ secrets.GITHUB_TOKEN}}
+          BOOL_SAVE_MARKDOWN: true
+          SSH_DEPLOY_KEY: ${{ secrets.GITHUB_TOKEN}}
 
 
 
