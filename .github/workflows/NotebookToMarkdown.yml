@@ -19,12 +19,16 @@ jobs:
         env:
            deploy_key: ${{ secrets.SSH_DEPLOY_KEY }}
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
+        with:
+          persist-credentials: false
       - name: convert notebooks and word docs to posts
         uses: fastai/fastpages@master
         with:
           BOOL_SAVE_MARKDOWN: true
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY}}
+          
+          
 
 
 
