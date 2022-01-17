@@ -29,3 +29,5 @@ fields:
 - type: boolean
   name: toc
   label: toc
+pages:
+- _posts/i-built-a-pikachu-classifier-because-there-s-like-8-of-them.md
