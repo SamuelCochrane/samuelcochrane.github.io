@@ -1,0 +1,21 @@
+name: JekyllNB
+
+on:
+  push:
+    branches: [ master ]
+    paths: 
+      - '_notebooks/**'
+jobs:
+  build:
+    name: autopy-lot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: autopy-lot 
+        uses: deep5050/autopy-lot@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          output_dir: './posts/'
+          output_type: markdown
+
+
