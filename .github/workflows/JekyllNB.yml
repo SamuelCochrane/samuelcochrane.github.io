@@ -1,0 +1,22 @@
+name: JekyllNB
+
+on:
+  push:
+    branches: [ master ]
+    paths: 
+      - '_notebooks/**'
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2.2.2
+      - name: Install JekyllNB
+        run: pip install jekyllnb
+      - name: Convert Notebooks
+        run: jupyter jekyllnb --page-dir _posts --image-dir assets/images notebooks/*.ipynb
+
+
