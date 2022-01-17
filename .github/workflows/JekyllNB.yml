@@ -17,6 +17,6 @@ jobs:
       - name: Install JekyllNB
         run: pip install jekyllnb
       - name: Convert Notebooks
-        run: jupyter jekyllnb --page-dir _posts --image-dir assets/images notebooks/*.ipynb
+        run: jupyter jekyllnb --page-dir _posts --image-dir assets/images/*.ipynb
 
 
