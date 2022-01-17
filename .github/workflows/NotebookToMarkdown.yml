@@ -3,19 +3,17 @@ name: JekyllNB
 on:
   push:
     branches: [ master ]
-    paths: 
-      - '_notebooks/**'
 jobs:
   build:
-    name: autopy-lot
+    name: nbconvert
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: autopy-lot 
-        uses: deep5050/autopy-lot@master
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: nbconvert .ipynb
+        uses: runsascoded/nbconvert@v1.2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-          output_dir: './posts/'
-          output_type: markdown
+          args: -t ${{ secrets.GITHUB_TOKEN}}
+
 
 
