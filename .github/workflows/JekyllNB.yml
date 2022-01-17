@@ -17,6 +17,11 @@ jobs:
       - name: Install JekyllNB
         run: pip install jekyllnb
       - name: Convert Notebooks
-        run: jupyter jekyllnb --page-dir _posts --image-dir assets/images/*.ipynb
+        run: sudo jupyter jekyllnb --page-dir _posts --image-dir assets/images/*.ipynb
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "master"
 
 
