@@ -6,7 +6,7 @@ description: Using state-of-the-art convolutional neural networks, we can finall
 permalink: pikachu-classifier
 style: ''
 color: warning
-image: assets/images/pika_family_update.png
+image: "/assets/images/pika_family_update.png"
 categories: ''
 tags:
 - Jupyter Notebooks
