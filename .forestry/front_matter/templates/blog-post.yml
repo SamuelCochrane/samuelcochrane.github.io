@@ -28,21 +28,61 @@ fields:
       file: 
       path: 
   label: color
+- name: style
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - fill
+    - border
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: style
 - type: text
   name: permalink
   label: permalink
-- type: text
-  name: style
-  label: style
 - type: file
   name: image
   label: image
-- type: text
-  name: categories
+- name: categories
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Portfolio
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: categories
 - type: list
   name: tags
   label: tags
+  config:
+    use_select: true
+    source:
+      type: simple
+    options:
+    - CNN
+    - FastAI
+    - APIs
+    - PowerBI
+    - Hacks
+    - Jupyter Notebooks
+    - Deep Learning
+    - Machine Learning
+    - Python
+    - Visualization/BI
+    - Automation
+    - PowerAutomate
+    - PowerApps
+    - SQL
 - type: boolean
   name: toc
   label: toc
