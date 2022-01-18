@@ -1,19 +1,17 @@
 ---
-title: Automating an email log with MS Flow
+title: Automating an email log with PowerAutomate
 permalink: logflow
-style: fill #fill, border
-color: primary #primary / secondary / success / danger / warning / info / light / dark (choose one only)
-image: /assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png
+style: fill
+color: primary
+image: "/assets/images/Annotation%202019-03-13%20162531_1kj7edk5d.png"
 categories:
-  - Portfolio
+- Portfolio
 tags:
-  - Automation
-  - MS Flow
-  - Email
-published: true
+- Automation
+- Email
+- PowerAutomate
 
 ---
-
 Love it or hate it, a lot of work is still done through email. Keeping a log of emails and responses can give a massive edge.
 Lets look at how we can automate the logging of all activity done on a theoretical support email alias.
 
