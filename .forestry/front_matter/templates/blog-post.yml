@@ -86,3 +86,5 @@ fields:
 - type: boolean
   name: toc
   label: toc
+pages:
+- _posts/how-to-connect-powerbi-to-a-tabular-api-and-why-you-shouldn-t.md
