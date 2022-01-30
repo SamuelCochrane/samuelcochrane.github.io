@@ -16,7 +16,7 @@ The data we're looking at will contain things like tasks, assigned people, tags,
 
 ***
 
-I say "why you shouldn't" because, as we'll learn, doing a direct connection like this is a series of problem-solving activities based around overcoming the inherent limitations of PowerBI.
+I say "why you shouldn't" because, as we'll learn, doing a direct connection like this is a series of problem-solving activities based around overcoming the inherent limitations of PowerBI by creating PowerQuery functions ourselves.
 
 ## The basics: getting data
 
@@ -26,25 +26,108 @@ Let's open up our query editor and set up a view helper parameters (variables).
 Here we can create variables just like in many other programming languages.  
 I'm going to create two parameters:
 
-\`
+`ClickUpTeamID` - This is the ID that represents your entire company/workspace. _Everything_ lives in here (people, tasks, permissions, etc). You can see it whenever you use clickup, your url will start with something like `https://app.clickup.com/12651678/...`
 
-one for storing the team ID and one for storing the API Key (both of which are private)
+`ClickUpAPIKey` - If you've used API's before, you know what this is. It's both a username and password, one single value that authenticates whoever uses it. As such, the actual value is hidden pretty religiously by administrators, as simply seeing it is enough for anyone to copy-paste and start using it. You can get your key from [https://app.clickup.com/10631688/settings/apps](https://app.clickup.com/10631688/settings/apps "https://app.clickup.com/10631688/settings/apps").
 
-Let's create a blank query in PowerBI
+PZ image
+
+Now that we have our two parameters, let's build a quick query to grab the open tasks.
+
+PZ image of parameters
+
+Looking at the documentation, I also included the `include_closed` and `subtasks` parameters to get those tasks as well.
 
         let
             Source = Json.Document(Web.Contents("https://api.clickup.com/api/v2",
-                [RelativePath="team/" & "10631688" & "/task",
+                [RelativePath="team/" & ClickUpTeamID & "/task",
                 Query=[include_closed="TRUE", 
-                       subtasks="TRUE", 
-                       page=Number.ToText(PageNo)],
+                       subtasks="TRUE"],
                 Headers=[Authorization=ClickUpAuthHeader]]))
         in 
             Source
 
-### PowerBI Doesn't Support Pagination
+If we run this, we get back 100 tasks. Which is great, but not enough. If we're building this to do analysis on our team's work habits/capacity, we need to see everything.
 
-### PowerBI Doesn't Support UNIX Timestamps
+According to the API specification, tasks is a paginated GET. We need to include the `page` parameter to specify which page to go to beyond the first.
+
+So an example query that would get the _next_ 100 results might be
+
+     let
+     	Source = Json.Document(Web.Contents("https://api.clickup.com/api/v2",
+        	[RelativePath="team/" & ClickUpTeamID & "/task",
+            Query=[include_closed="TRUE", 
+            	subtasks="TRUE",
+                page=2],
+    		Headers=[Authorization=ClickUpAuthHeader]]))
+    in 
+    	Source
+
+### Issue #1: PowerBI Doesn't Support Pagination
+
+In order to get all the results we're looking for, we're can't just do a standard query. We need to do one query per page, passing in a different `page` value, keep going until the result is blank (no more tasks), and then combine all the values.
+
+PowerBI doesn't have a built-in way to do this. Ideally, the UI would give us an option to treat this as a paginated API and treat it accordingly, but no such luck. We'll have to code something ourselves.
+
+PZ image of the UI. Caption: a conspicious lack of options we need.
+
+the `let` and `in` operators define a query in PowerQuery. `let` defines the steps, and `in` sets the final object to be returned (99% of the time, `in` is just the name of your final step)
+
+If we add an input line like `(PageNo as number) =>` to the top of the code, above `let`, we can turn our query into a function. 
+
+PZ iamge of ClickupGetTaskPages
+
+I'm also going to edit our code to use that variable as the page to go get from the REST API.
+
+    (PageNo as number) =>
+    let
+    	Source = Json.Document(Web.Contents("https://api.clickup.com/api/v2",
+        	[RelativePath="team/" & ClickUpTeamID & "/task",
+            Query=[include_closed="TRUE", 
+            	   subtasks="TRUE", 
+                   page=Number.ToText(PageNo)],
+    		Headers=[Authorization=ClickUpAuthHeader]]))
+    in 
+    	Source
+
+When we now use the UI to provide a value for `PageNo` and invoke it, a new query will be created that invoked the function, e.g.
+
+    let
+        Source = ClickupTasks(3)
+    in
+        Source
+
+which will get the third page of results.
+
+With this in mind, I'm going to rename our function-ized query to `GetClickupTaskPage`, and create a new query that looks like this.
+
+    let
+        Records = List.Generate(()=> 
+            [Source = ClickupGetTaskPages(0), Page=0],
+            each List.Count([Source][tasks]) > 0,
+            each [Source = ClickupGetTaskPages([Page]+1), Page=[Page] +1],
+            each [Source])
+     in
+     	Records
+
+This code will generate a list with a `Page` variable, and while the `Source` query object isn't blank (still returning tasks), it will increment the variable and call `Source` again with the next page, before finally giving us all the `Source`'s together as a big list.
+
+PZ image
+
+Each of these rows is a query it made, containing up to 100 rows each.
+
+From there, I run the following steps to convert this list into a table, and expand the `Record` objects down to the row-level so that they're not summarized objects anymore. (I did this through the UI, but here's the code it generates)
+
+    #"Converted to Table" = Table.FromList(Records, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"tasks"}, {"Column1.tasks"}),
+    #"Expanded Column1.tasks" = Table.ExpandListColumn(#"Expanded Column1", "Column1.tasks"),
+    #"Expanded Column1.tasks1" = Table.ExpandRecordColumn(#"Expanded Column1.tasks", "Column1.tasks", {"id", "custom_id", "name", "text_content", "description", "status", "orderindex", "date_created", "date_updated", "date_closed", "archived", "creator", "assignees", "watchers", "checklists", "tags", "parent", "priority", "due_date", "start_date", "points", "time_estimate", "custom_fields", "dependencies", "linked_tasks", "team_id", "url", "permission_level", "list", "project", "folder", "space"}, {"id", "custom_id", "name", "text_content", "description", "status", "orderindex", "date_created", "date_updated", "date_closed", "archived", "creator", "assignees", "watchers", "checklists", "tags", "parent", "priority", "due_date", "start_date", "points", "time_estimate", "custom_fields", "dependencies", "linked_tasks", "team_id", "url", "permission_level", "list", "project", "folder", "space"}),
+
+And just like that, we've overcome our first hurdle. We got our rows.
+
+PZ image of tasks.
+
+### Issue #2: PowerBI Doesn't Support UNIX Timestamps
 
 Checking the data returned from the api, I immediately noticed something odd. All of the time (start date, due date, ...) was being given as an integer value (like 1641782153786).
 
@@ -52,15 +135,15 @@ PZ image
 
 This is called a UNIX Timestamp, and represents the number of seconds since January 1st, 1970 (when time started existing).
 
-There are some \[great tools\]([https://www.unixtimestamp.com/](https://www.unixtimestamp.com/ "https://www.unixtimestamp.com/")) for converting this to a human-readable time. 
+There are some \[great tools\]([https://www.unixtimestamp.com/](https://www.unixtimestamp.com/ "https://www.unixtimestamp.com/")) for converting this to a human-readable time.
 
 PowerBI is not one of them.
 
-If you try to use the built-in data type conversion tools to turn this into a timestamp, it doesn't work. 
+If you try to use the built-in data type conversion tools to turn this into a timestamp, it doesn't work.
 
 PZ image
 
-Here's my workaround. 
+Here's my workaround.
 
     let
         getDateTimeZone = (optional UNIX_Timestamp) =>
@@ -78,14 +161,14 @@ PZ image
 
 This function takes in an integer (or text - and converts it to an integer), and tries to convert it to a DateTimeZone value by adding the unix timestamp (as a duration of seconds) to a 1970 timestamp. If the value is null, it returns null.
 
-The good news is that this works! The bad news is that this is more complex than just changing the field type. For each column we want to fix, we'll have to add a query step that adds a new column that invokes that function on the original column, and then delete the original column. 
+The good news is that this works! The bad news is that this is more complex than just changing the field type. For each column we want to fix, we'll have to add a query step that adds a new column that invokes that function on the original column, and then delete the original column.
 
     = Table.AddColumn(#"..Previous Step..", "start_date", each getDateTimeZone([original_start_date]))
     = Table.RemoveColumns(#"Invoked Custom Function1",{"original_start_date"})
 
 PZ image of updated columns as times
 
-### PowerBI.com Doesn't Support Refreshing Non-Static Queries
+### Issue #3: PowerBI.com Doesn't Support Refreshing Non-Static Query Paths
 
 Remember how we had to use parameters and row-executed functions to overcome those pagination issues? Well, the online service doesn't like that very much.
 
@@ -121,17 +204,17 @@ Chris Webb is able to solve this for himself by setting a static query URL and a
 
 But this is what we were _already_ doing for things like "subtasks=TRUE". We weren't concatenating that into the URL, we were passing it as a parameter.
 
-What we _can't_ set as a static part of the the relative path. So, earlier, when we needed to iterate through and run a query for each space to get a list of folders inside each one? 
+What we _can't_ set as a static part of the the relative path. So, earlier, when we needed to iterate through and run a query for each space to get a list of folders inside each one?
 
     Source = Json.Document(
     	Web.Contents("https://api.clickup.com/api/v2", 
         [RelativePath="space/" & spaceid & "/list",
         ...
 
-That space id isn't a parameter, it's part of the actual path we're connecting to. 
+That space id isn't a parameter, it's part of the actual path we're connecting to.
 
 As far as I've found, there's no workaround for this.
 
-If you're still determined at this point, here's what I suggest:   
-you could hardcode the list of spaces/folders to query as a set of static URL strings.   
+If you're still determined at this point, here's what I suggest:  
+you could hardcode the list of spaces/folders to query as a set of static URL strings.  
 The report itself can now be refreshed on the service, but you will still have to occasionally go in and manually update those strings yourself. If people add new folders/spaces/etc, they won't automatically get queried by the report until you edit the file to do so.
