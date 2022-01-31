@@ -1,15 +1,21 @@
 ---
-color: warning
+color: secondary
 categories: ''
 title: How to connect PowerBI to a Tabular API (and why you shouldn't)
-description: ''
+description: You can get tabular REST APIs working through liberal use of custom PowerQuery
+  code, and I'll show you how.
 style: ''
 image: assets/images/pbidesktop_q3ikg6bxqs.png
 tags:
+- APIs
+- PowerQuery
+- Hacks
 - PowerBI
 toc: true
 
 ---
+{:toc}
+
 Before we start, I'll be basing this on the [Clickup API](https://clickup.com/api "Clickup API") (their API documentation is actually pretty good, you should give it a check!).  
 Clickup is a project management tool, similar to Monday.com and Azure DevOps.  
 {% include elements/highlight.html text="Nothing in this document is all that specific to Clickup"%}, so the contents should _mostly_ hold true for whatever other REST API you're looking at.  
@@ -22,7 +28,7 @@ I say "why you shouldn't" because, as we'll learn, doing a direct connection lik
 ## The basics: getting data
 
 Let's open up our query editor (Home->Transform Data) and set up a few helper parameters (variables).  
-![](assets/images/screenshot-2022-01-29-230305.jpg)
+![](/assets/images/screenshot-2022-01-29-230305.jpg)
 
 Here we can create variables just like in many other programming languages.  
 I'm going to create two parameters:
@@ -31,11 +37,11 @@ I'm going to create two parameters:
 
 `ClickUpAPIKey` - If you've used API's before, you know what this is. It's both a username and password, one single value that authenticates whoever uses it. As such, the actual value is hidden pretty religiously by administrators, as simply seeing it is enough for anyone to copy-paste and start using it. You can get your key from [https://app.clickup.com/10631688/settings/apps](https://app.clickup.com/10631688/settings/apps "https://app.clickup.com/10631688/settings/apps").
 
-![](assets/images/ifq2qyzgfa.png)
+![](/assets/images/ifq2qyzgfa.png)
 
 Now that we have our two parameters, let's build a quick query to grab the open tasks.
 
-![](assets/images/9dlbhqdqb2.png)
+![](/assets/images/9dlbhqdqb2.png)
 
 Looking at the documentation, I also included the `include_closed` and `subtasks` parameters to get those tasks as well.
 
@@ -91,7 +97,7 @@ I'm also going to edit our code to use that variable as the page to go get from 
 
 This changes the query into a UI that accepts a a parameter.
 
-![](assets/images/pbidesktop_avblzzi4oq.png)
+![](/assets/images/pbidesktop_avblzzi4oq.png)
 
 When we now use the UI to provide a value for `PageNo` and invoke it, a new query will be created that invoked the function, e.g.
 
@@ -115,7 +121,7 @@ With this in mind, I'm going to rename our function-ized query to `GetClickupTas
 
 This code will generate a list with an accompanying `Page` variable, and while the `Source` query-object isn't blank (still returning tasks), it will increment the variable and call `Source` again with the next page, before finally giving us all the `Source`'s together as a big list.
 
-![](assets/images/pbidesktop_q3ikg6bxqs.png)Each of these rows is a query we made, containing up to 100 rows each.
+![](/assets/images/pbidesktop_q3ikg6bxqs.png)Each of these rows is a query we made, containing up to 100 rows each.
 
 From there, I run the following steps to convert this list into a table, and expand the `Record` objects down to the row-level so that they're not summarized objects anymore. (I did this through the UI, but here's the code it generates)
 
@@ -126,13 +132,13 @@ From there, I run the following steps to convert this list into a table, and exp
 
 And just like that, we've overcome our first hurdle. We got our tasks.
 
-![](assets/images/pbidesktop_pcoxlrtkq9.png)
+![](/assets/images/pbidesktop_pcoxlrtkq9.png)
 
 ### Issue #2: PowerBI Doesn't Support UNIX Timestamps
 
 Checking the data returned from the api, I immediately noticed something odd. All of the time columns (start date, due date, ...) have an integer value (like 1641782153786).
 
-![](assets/images/pbidesktop_aqve92pybg.png)
+![](/assets/images/pbidesktop_aqve92pybg.png)
 
 This is called a UNIX Timestamp, and represents the number of seconds since January 1st, 1970 (when time started existing).
 
@@ -142,7 +148,7 @@ PowerBI is not one of them.
 
 If you try to use the built-in data type conversion tools to turn this into a timestamp, it doesn't work.
 
-![](assets/images/pbidesktop_rxfubybdbl.png)![](assets/images/pbidesktop_zu8dnxijry.png)
+![](/assets/images/pbidesktop_rxfubybdbl.png)![](/assets/images/pbidesktop_zu8dnxijry.png)
 
 Here's my workaround.
 
@@ -158,7 +164,7 @@ Here's my workaround.
 
 Adding the following code to a new blank query will create a function.
 
-![](assets/images/pbidesktop_i2q0gyvz2m.png)
+![](/assets/images/pbidesktop_i2q0gyvz2m.png)
 
 This function takes in an integer (or text, and converts it to an integer), and tries to convert it to a DateTimeZone value by adding the unix timestamp (as a duration of seconds) to a 1970 timestamp. If the value is null, it returns null instead so that we don't get errors.
 
@@ -167,7 +173,7 @@ The good news is that this works! The bad news is that this is more complex than
     = Table.AddColumn(#"..Previous Step..", "start_date", each getDateTimeZone([original_start_date]))
     = Table.RemoveColumns(#"Invoked Custom Function1",{"original_start_date"})
 
-![](assets/images/pbidesktop_80aptxpxbo.png)
+![](/assets/images/pbidesktop_80aptxpxbo.png)
 
 ### Creating context-specific queries
 
@@ -216,7 +222,7 @@ Then, I'll run a query to get my list of spaces, and add a step to invoke this f
     in
         #"Expanded Custom"
 
-![](assets/images/pbidesktop_vgi4u39b9v.png)
+![](/assets/images/pbidesktop_vgi4u39b9v.png)
 
 This dynamic query-path allows us to get everything we need.
 
@@ -224,13 +230,13 @@ however...
 
 ### Issue #3: PowerBI.com Doesn't Support Refreshing Non-Static Query Paths
 
-Remember how we had to use parameters and row-executed functions to overcome those pagination issues? And how we had to dynamically change to query path to get the right space to look at? 
+Remember how we had to use parameters and row-executed functions to overcome those pagination issues? And how we had to dynamically change to query path to get the right space to look at?
 
 Well, the online service doesn't like that very much, and it won't let us refresh the data online once we publish this dashboard.
 
-![](assets/images/brave_xbetnzvjln.png)
+![](/assets/images/brave_xbetnzvjln.png)
 
-What's incredible to me is how this is such a random limitation. 
+What's incredible to me is how this is such a random limitation.
 
 You can connect to your data on desktop, _manually_ refresh on desktop just fine, publish to the service and see the data online, but you can't _schedule nor trigger_ a refresh on the service.
 
@@ -239,9 +245,7 @@ This means people can access the report from the website, but in order for that 
 After much googling, I was able to find someone else dealing with this problem, and a good blog post by Chris Webb: [Web.Contents(), M Functions And Dataset Refresh Errors In Power BI](https://blog.crossjoin.co.uk/2016/08/23/web-contents-m-functions-and-dataset-refresh-errors-in-power-bi/ "Web.Contents(), M Functions And Dataset Refresh Errors In Power BI")
 
 > This query refreshes with no problems in Power BI Desktop. However, when you publish a report that uses this code to PowerBI.com and try to refresh the dataset, you’ll see that refresh fails and returns a rather unhelpful error message:  
-> _Unable to refresh the model because it references an unsupported da_
->
-> _ta source._
+> _Unable to refresh the model because it references an unsupported data source._
 
 So here's the problem, as stated by Chris Webb
 
