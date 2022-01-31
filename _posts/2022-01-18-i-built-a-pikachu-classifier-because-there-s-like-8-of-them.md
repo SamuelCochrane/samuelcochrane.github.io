@@ -29,3 +29,5 @@ Of course, this presents a distinct challenge for anyone who doesn't want to tak
 To that end, [{{page.title}}](https://colab.research.google.com/drive/1Kc5aLgwfL2_3qmC9goN_tgsnDzEfS4yf?usp=sharing)
 
 It covers how to set up an Azure API instance to scrape the images, cleaning the data for consumption (removing transparency, corrupt files), transforming the images (setting dataloaders, resizing, adding image transforms, etc), building and evaluating a CNN against the data (spoiler: it does pretty well), and finally pickling the model for later inference, I even added a little UI at the end where you can add your own images to see how it does.
+
+{% gist b529db700967dec5f1fd256a14bb2585 %}
