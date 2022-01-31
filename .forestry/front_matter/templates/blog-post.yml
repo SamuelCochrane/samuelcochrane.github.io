@@ -83,8 +83,6 @@ fields:
     - PowerAutomate
     - PowerApps
     - SQL
-- type: boolean
-  name: toc
-  label: toc
+    - PowerQuery
 pages:
 - _posts/2022-01-31-how-to-connect-powerbi-to-a-tabular-api-and-why-you-shouldn-t.md
