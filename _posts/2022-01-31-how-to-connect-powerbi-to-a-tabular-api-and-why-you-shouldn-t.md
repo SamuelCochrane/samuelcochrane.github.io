@@ -4,8 +4,9 @@ categories: ''
 title: How to connect PowerBI to a Tabular API (and why you shouldn't)
 description: ''
 style: ''
-image: ''
-tags: []
+image: assets/images/pbidesktop_q3ikg6bxqs.png
+tags:
+- PowerBI
 toc: true
 
 ---
@@ -276,4 +277,6 @@ If you're still determined at this point, here's what I suggest:
 You could hardcode the list of spaces/folders to query as a set of static URL strings.  
 The report itself can now be refreshed on the service, but you will still have to occasionally go in and manually update those strings yourself. If people add new folders/spaces/etc, they won't automatically get queried by the report until you edit the file to do so.
 
-Alternatively, since you have all the tasks, you could get your lists of users/folders/lists/tags by creating summary tables that reference your Tasks table and grab the distinct values out of it. The downside of this one is that, as far as PowerBI is now concerned, anything that isn't being used by a task doesn't exist. You would not see any empty lists, inactive users, etc. 
+Alternatively, since you have all the tasks, you could get your lists of users/folders/lists/tags by creating summary tables that reference your Tasks table and grab the distinct values out of it. The downside of this one is that, as far as PowerBI is now concerned, anything that isn't being used by a task doesn't exist. You would not see any empty lists, inactive users, etc. You could imagine this might make your dashboard especially volatile if you were only pulling open tasks, as entire folders and people blink out of existence after closing their tasks.
+
+Maybe use an ETL server instead.
