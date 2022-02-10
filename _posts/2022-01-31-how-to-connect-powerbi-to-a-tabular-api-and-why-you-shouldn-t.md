@@ -283,4 +283,50 @@ The report itself can now be refreshed on the service, but you will still have t
 
 Alternatively, since you have all the tasks, you could get your lists of users/folders/lists/tags by creating summary tables that reference your Tasks table and grab the distinct values out of it. The downside of this one is that, as far as PowerBI is now concerned, anything that isn't being used by a task doesn't exist. You would not see any empty lists, inactive users, etc. You could imagine this might make your dashboard especially volatile if you were only pulling open tasks, as entire folders and people blink out of existence after closing their tasks.
 
-Maybe use an ETL server instead.
+### Maybe use an ETL server instead.
+
+Because of all these issues, I decided to use an online ETL server to first stage the data from the API. 
+
+Setting up a proper data pipeline offers a variety of benefits, not least of which is that any transformations you make can be accessible as a single 'source of truth', instead of being silo'd in the report. All of the workarounds we had to do to get the API working can be dropped in favor of pulling in standardized tables from our server.  
+  
+I went with [https://www.keboola.com/](https://www.keboola.com/ "https://www.keboola.com/") as their free tier was generous enough that I was able to accomplish this without cost.
+
+For posterity, here' the code I used to pull the `Tasks` as an example of their configuration structure.
+
+    {
+     "parameters": {
+      "api": {
+       "baseUrl": "https://api.clickup.com/api/v2/team/[redacted]/",
+       "http": {
+        "headers": {
+         "Authorization": "pk_[redacted]",
+         "Content-Type": "application/json;charset=UTF-8"
+        },
+        "defaultOptions": {
+         "params": {
+          "include_closed": true,
+          "subtasks": true,
+          "assignees%5B%5D": "Sam Cochrane"
+         }
+        }
+       },
+       "pagination": {
+        "method": "pagenum",
+        "firstPage": 0
+       }
+      },
+      "config": {
+       "debug": true,
+       "outputBucket": "bk_clickup",
+       "jobs": [
+        {
+         "endpoint": "task",
+         "dataField": "tasks",
+         "responseFilter": [
+          "custom_fields"
+         ]
+        }
+       ]
+      }
+     }
+    }
