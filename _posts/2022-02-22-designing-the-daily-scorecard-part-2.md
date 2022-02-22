@@ -10,7 +10,7 @@ tags:
 - PowerBI
 
 ---
-\- Part 2 of \[How I designed my new-years resolution\](../Sam Loves Coffee /How I designed my new-years resolution.md). Read that first to learn my methodology on how these KPIs were selected in the first place.
+- Part 2 of [How I designed my new-years resolution](https://www.samloves.coffee/2022/02/14/designing-my-yearly-theme.html "https://www.samloves.coffee/2022/02/14/designing-my-yearly-theme.html"). Read that first to learn my methodology on how these KPIs were selected in the first place.
 
 ### Setting up the dashboard
 
@@ -67,10 +67,10 @@ After seeing my overview, I might want to know a bit more about each KPI to dete
 
 This view allows me to select each KPI and see:
 
- - The OKR it connects to
- - a graph view of my total progress against the total duration of the goal
- - a reminder of why I'm doing this (should connect back to motivating Why)
- - a tabular view of my historical and queued tasks (with links).
+* The OKR it connects to
+* a graph view of my total progress against the total duration of the goal
+* a reminder of why I'm doing this (should connect back to motivating Why)
+* a tabular view of my historical and queued tasks (with links).
 
 All of these feed back into the core goal of providing **context**. To feel connected to my goals, I need to know why I'm doing them, where I'm going, and how far I've gone.
 
@@ -82,44 +82,39 @@ I track my todo items in Clickup, so I want to use that as a data source. If I c
 
 Clickup has a built-in Goals feature, but I found it to be lacking.
 
- - You have no way to define a set goal that's furthered by tasks. If you set the goal to be task-driven, it just sets it as "100% of the tasks in this list are complete".
- - You cannot embed the Goals view as a tab in your Clickup lists to make them easily accessible. (Which is genuinely surprising, since they allow you to embed nearly **anything** (Figma, Youtube, iframes) in there.
- - Your reporting/visualization capabilities (graphs, guages,etc), as well as your ability to create custom calculations/formulas*, are quite limited (especially for someone that a professional business intelligence developer).
- 	- *(like calculating todays target based on todays date, total goal, and num days we are into the goal).
+* You have no way to define a set goal that's furthered by tasks. If you set the goal to be task-driven, it just sets it as "100% of the tasks in this list are complete".
+* You cannot embed the Goals view as a tab in your Clickup lists to make them easily accessible. (Which is genuinely surprising, since they allow you to embed nearly **anything** (Figma, Youtube, iframes) in there.
+* Your reporting/visualization capabilities (graphs, guages,etc), as well as your ability to create custom calculations/formulas*, are quite limited (especially for someone that a professional business intelligence developer).
+  * *(like calculating todays target based on todays date, total goal, and num days we are into the goal).
 
 I wanted something more flexible, where I can set my goal manually and have each completed task count towards that.
 
 Here's what I set up.
 
-- I created a folder (titled The Year of Connection) which would contain one list for each of my KPIs
-    
-- For each of those lists, I set a start/end date, as well as a description which would be parsed by the dashboard into metrics for each list:
+* I created a folder (titled The Year of Connection) which would contain one list for each of my KPIs
+* For each of those lists, I set a start/end date, as well as a description which would be parsed by the dashboard into metrics for each list:
 
 ![](https://remnote-user-data.s3.amazonaws.com/Zd6BYqPAjO3ocxIsDm0rQE0rhQgF4SkzkzOcEGNH-Rs9kBQt5g8C6hCI--JnzDiYu9Kkp0BRSxLItxDEFnlLyd4AptnuUynGVZymL9WrsNu0XohJttZDEfHo0HVbn3ef.png)
 
-```
-
-Why =
-
-VAR y = SEARCH("Why:", ClickupKeyResults\[List.content\])
-
-RETURN MID(ClickupKeyResults\[List.content\], y+4, LEN(ClickupKeyResults\[List.content\]))
-
-```
+    
+    Why =
+    
+    VAR y = SEARCH("Why:", ClickupKeyResults\[List.content\])
+    
+    RETURN MID(ClickupKeyResults\[List.content\], y+4, LEN(ClickupKeyResults\[List.content\]))
+    
 
 ![](https://remnote-user-data.s3.amazonaws.com/cNQrKR3_ZED1nPedQRTaBKETfHwDrSKJgtK6min73xDZaBPraRZhhxGlqmuebFsP5o2bBh_2YvrwYoDtRcpxHrQVEYTgqxfysFUVekzB9QjXx7f-R9mDWuEq-ExYWA3P.png)
 
-```
-
-Steps =
-
-VAR x = SEARCH("GOAL:", ClickupKeyResults\[List.content\])
-
-VAR y = SEARCH("OKR:", ClickupKeyResults\[List.content\])
-
-RETURN MID(ClickupKeyResults\[List.content\], 6, y-x-5)
-
-```
+    
+    Steps =
+    
+    VAR x = SEARCH("GOAL:", ClickupKeyResults\[List.content\])
+    
+    VAR y = SEARCH("OKR:", ClickupKeyResults\[List.content\])
+    
+    RETURN MID(ClickupKeyResults\[List.content\], 6, y-x-5)
+    
 
 ![](https://remnote-user-data.s3.amazonaws.com/ZpgV4IPHmODSHa0g9QL9Ku5sJ5sYzIKMvjICFrNSaw4bkd52U_ZIDCRjQDnIdmROKbFsEFXeR-ZVT9BHOkyLox3ATL8BDMZpqmBbk3-gqWy5wcv_87cE22gsg4hzXpIT.png)
 
@@ -132,7 +127,7 @@ The way I've set things up, all of my goals naturally 'bubble up' in my calendar
 I might see the 'go outside' task due today and decide to work from a coffee shop where I wouldn't have otherwise. Even if I don't complete the task today and reschedule it for tomorrow, I'm still **thinking** about the goal.
 Instead of getting buried and eventually forgotten like most new-years resolutions, they naturally enter my thinking.
 
-- What gets repeated gets remembered; What gets measured gets managed.
+* What gets repeated gets remembered; What gets measured gets managed.
 
 Finally, also have a daily recurring task to view my dashboard. All I have to do is click the task (where I've conveniently embedded the dashboard as well), view it for <5sec, then check Complete.
 
