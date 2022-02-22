@@ -2,7 +2,9 @@
 color: primary
 categories: ''
 title: Designing My Yearly Theme
-description: ''
+description: How I designed my personal goals to set myself up for success, using
+  what I've learned about goal design from my experience working in business intelligence.
+  It was helpful for me, and hopefully it'll be helpful for you too.(Part 1)
 style: ''
 image: "/assets/images/p8hn5h6tho.png"
 tags: []
