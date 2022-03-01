@@ -14,9 +14,9 @@ plugins:
 locale                   : "en-US"
 title                    : "Sam Loves Coffee 👱‍♂️🤍☕"
 description         : >-
-                      I turn data into information,
-                      make that information actionable,
-                      and make those actions the right ones.
+                      📅 I turn abstract data into information,
+                      🔬 make that information actionable,
+                      🦸 and make those actions the right ones.
 url                      : https://samuelcochrane.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 imgurl                   : https://samuelcochrane.github.io/assets/images
