@@ -4,7 +4,7 @@ title: My Titled Note
 description: The description
 style: border
 color: primary
-permalink: memes
+permalink: 
 image: 
 categories: 
 tags: 
