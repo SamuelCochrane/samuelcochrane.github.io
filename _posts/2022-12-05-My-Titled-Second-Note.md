@@ -1,10 +1,10 @@
 ---
 jekylltitle: 2022-12-05-My-Titled-Second-Note
-title: My Titled Note
+title: My Titled Second Note
 description: The description
 style: border
 color: primary
-permalink: memes
+permalink: 
 image: 
 categories: 
 tags: 
